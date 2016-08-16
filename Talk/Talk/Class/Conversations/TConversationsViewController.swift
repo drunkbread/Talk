@@ -18,18 +18,6 @@ class TConversationsViewController: UITableViewController{
         chatManager.loadAllConversationsFromDatabaseWithAppend2Chat!(true)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-//        let txt = EMChatText(text: "test")
-//        let body = EMTextMessageBody(chatObject: txt)
-//        let msg = EMMessage.init(receiver: "du003", bodies: [body])
-//        chatManager.asyncSendMessage(msg, progress: nil, prepare: { (message, error) in
-//                print(error)
-//            }, onQueue: nil, completion: { (message, error) in
-//                print(error)
-//            }, onQueue: nil)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -105,10 +93,12 @@ extension TConversationsViewController: EMChatManagerDelegate{
         chatManager.addDelegate(self, delegateQueue: nil)
     }
     
+    // 会话列表数量变更回调
     func didUpdateConversationList(conversationList: [AnyObject]!) {
         conversationsToModel(chatManager.conversations)
     }
     
+    // 收消息回调
     func didReceiveMessage(message: EMMessage!) {
         conversationsToModel(chatManager.conversations)
     }
