@@ -15,11 +15,19 @@ class TConversationsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         addEaseMobDelegate()
-//        tableView.registerClass(TConversationCell.classForCoder(), forCellReuseIdentifier: "TConversationCell")
+        chatManager.loadAllConversationsFromDatabaseWithAppend2Chat!(true)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+//        let txt = EMChatText(text: "test")
+//        let body = EMTextMessageBody(chatObject: txt)
+//        let msg = EMMessage.init(receiver: "du003", bodies: [body])
+//        chatManager.asyncSendMessage(msg, progress: nil, prepare: { (message, error) in
+//                print(error)
+//            }, onQueue: nil, completion: { (message, error) in
+//                print(error)
+//            }, onQueue: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,14 +41,13 @@ class TConversationsViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return datasource?.count ?? 0
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TConversationCell", forIndexPath: indexPath) as! TConversationCell
-        cell.showNameLabel.text = "1231231231231231231231231231232131231231212312312312312312312312312312321312312312"
-        cell.msgInfoLabel.text = "1231231231231231231231231231232131231231212312312312312312312312312312321312312312"
+        cell.conversationModel = datasource![indexPath.row]
         return cell
     }
     
@@ -87,7 +94,7 @@ class TConversationsViewController: UITableViewController{
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
-     }
+     }1
      */
     
 }
@@ -99,12 +106,29 @@ extension TConversationsViewController: EMChatManagerDelegate{
     }
     
     func didUpdateConversationList(conversationList: [AnyObject]!) {
-        let conversations = conversationList as Array
-        print(conversations)
+        conversationsToModel(chatManager.conversations)
     }
     
     func didReceiveMessage(message: EMMessage!) {
-        
+        conversationsToModel(chatManager.conversations)
+    }
+    
+    func conversationsToModel(ary: Array <AnyObject>?) {
+        datasource?.removeAll()
+        if  ary != nil {
+            for conversation in ary! {
+                if datasource == nil {
+                    datasource = Array()
+                }
+                datasource?.append(TConversationModel(conversation: conversation as! EMConversation))
+            }
+            
+            tableView.reloadData()
+        }
+    }
+    
+    func didAutoLoginWithInfo(loginInfo: [NSObject : AnyObject]!, error: EMError!) {
+        print("error  --- \(error)" )
     }
 }
 

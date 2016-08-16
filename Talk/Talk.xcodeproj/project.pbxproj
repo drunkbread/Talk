@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		900C39901D61BFC9007F3E9B /* TConversationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C398F1D61BFC9007F3E9B /* TConversationModel.swift */; };
 		900C39921D61E4A1007F3E9B /* TConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C39911D61E4A1007F3E9B /* TConversationCell.swift */; };
+		90A4B4961D6314F4007BBCEA /* EaseMobExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4B4951D6314F4007BBCEA /* EaseMobExtension.swift */; };
 		90B4C2991D5D8D55004721B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B4C2981D5D8D55004721B9 /* AppDelegate.swift */; };
 		90B4C29E1D5D8D55004721B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B4C29C1D5D8D55004721B9 /* Main.storyboard */; };
 		90B4C2A01D5D8D55004721B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B4C29F1D5D8D55004721B9 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		900C398F1D61BFC9007F3E9B /* TConversationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConversationModel.swift; sourceTree = "<group>"; };
 		900C39911D61E4A1007F3E9B /* TConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConversationCell.swift; sourceTree = "<group>"; };
+		90A4B4951D6314F4007BBCEA /* EaseMobExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EaseMobExtension.swift; sourceTree = "<group>"; };
 		90B4C2951D5D8D55004721B9 /* Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B4C2981D5D8D55004721B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90B4C29D1D5D8D55004721B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				90B4C2C61D5DAC1C004721B9 /* TExtension.swift */,
+				90A4B4951D6314F4007BBCEA /* EaseMobExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				900C39921D61E4A1007F3E9B /* TConversationCell.swift in Sources */,
 				90B4C2C51D5DAA94004721B9 /* TTableView.swift in Sources */,
 				90B4C2EC1D5DD7C2004721B9 /* THeaders.swift in Sources */,
+				90A4B4961D6314F4007BBCEA /* EaseMobExtension.swift in Sources */,
 				90B4C2C71D5DAC1C004721B9 /* TExtension.swift in Sources */,
 				90B4C2B61D5D9A3D004721B9 /* TContactsViewController.swift in Sources */,
 				90B4C2BA1D5D9AE1004721B9 /* TSettingsViewController.swift in Sources */,

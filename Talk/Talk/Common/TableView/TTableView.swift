@@ -12,5 +12,7 @@ class TTableView: UITableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         hiddenFootView()
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 3
     }
 }

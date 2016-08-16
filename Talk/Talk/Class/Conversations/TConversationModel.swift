@@ -8,12 +8,23 @@
 
 import Foundation
 
-@objc protocol TConversationModelDelegate {
-    func conversationLastChatter() -> String
+
+protocol TConversationModelDelegate {
+    
+    // 会话显示的头像
+    func conversationAvatar() -> NSURL?
+    
+    // 会话显示的名称
     func conversationShowName() -> String
-    func conversationShowAvatar() -> String?
-    func conversationLastTime() -> String?
-    func conversationLastMsg() -> String?
+    
+    // 会话中最后一条消息的时间
+    func conversationLastUpdateTime() -> String?
+    
+    // 会话中最后一条消息的内容
+    func conversationMsgInfo() -> String?
+    
+    // 会话的未读消息数
+    func conversationUnreadCount() -> String?
 }
 
 
@@ -26,23 +37,49 @@ class TConversationModel: NSObject, TConversationModelDelegate{
         self.conversation = conversation
     }
     
-    func conversationLastChatter() -> String {
-        return conversation.chatter
+    func conversationAvatar() -> NSURL? {
+        return NSURL(string: "http://www.jf258.com/uploads/2013-07-07/070645591.jpg")
     }
     
     func conversationShowName() -> String {
-        return "showName"
+        // 如果有名字，这里要加上名字的判断
+        return conversation.chatter
     }
     
-    func conversationShowAvatar() -> String? {
-        return "showAvatar"
+    func conversationLastUpdateTime() -> String? {
+        let dTime = Double(conversation.latestMessage().timestamp)
+        return NSDate().UnixTimestampToString(dTime)
     }
     
-    func conversationLastTime() -> String? {
-        return "lastTime"
+    func conversationMsgInfo() -> String? {
+        let ret: String!
+        let msg = conversation.latestMessage()
+        switch msg.msgBodyType() {
+        case MessageBodyType.eMessageBodyType_Text :
+            ret = msg.text()
+        case MessageBodyType.eMessageBodyType_Image :
+            ret = "[图片]"
+        case MessageBodyType.eMessageBodyType_Video :
+            ret = "[视频]"
+        case MessageBodyType.eMessageBodyType_Voice :
+            ret = "[音频]"
+        case MessageBodyType.eMessageBodyType_Location :
+            ret = "[位置]"
+        case MessageBodyType.eMessageBodyType_File :
+            ret = "[文件]"
+        default:
+            ret = ""
+        }
+        return ret
     }
     
-    func conversationLastMsg() -> String? {
-        return "lastMsg"
+    func conversationUnreadCount() -> String? {
+        if conversation.unreadMessagesCount() > 0 && conversation.unreadMessagesCount() < 100{
+            return String(conversation.unreadMessagesCount())
+        } else if (conversation.unreadMessagesCount() >= 100) {
+            return "N+"
+        }else {
+            return nil
+        }
     }
 }

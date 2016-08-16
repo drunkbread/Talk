@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         addNotifications()
         EaseMob.sharedInstance().registerSDKWithAppKey("easemob-demo#chatdemoui", apnsCertName: "")
-        EaseMob.sharedInstance().applicationDidFinishLaunching(application)
+        EaseMob.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         showViewController()
         self.window?.makeKeyAndVisible()
         return true

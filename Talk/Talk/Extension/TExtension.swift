@@ -26,3 +26,33 @@ extension NSNotificationCenter {
 extension String {
     
 }
+
+// TIME
+extension NSDate{
+    func UnixTimestampToString(unixTime: Double) -> String {
+        var dUnixTime = unixTime
+        if dUnixTime > 140000000000 {
+            dUnixTime = dUnixTime/1000
+        }
+        let date = NSDate.init(timeIntervalSince1970: dUnixTime)
+        return self.formattedTimeYYYYMMddHHmmss(date)
+    }
+    
+    func formattedTimeYYYYMMddHHmmss(time: NSDate) -> String {
+        let dataFormatter = NSDateFormatter()
+        dataFormatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        return dataFormatter.stringFromDate(time)
+    }
+    
+    func formattedTimeMMddHHmmss(time: NSDate) -> String {
+        let dataFormatter = NSDateFormatter()
+        dataFormatter.dateFormat = "MM月dd日 HH:mm:ss"
+        return dataFormatter.stringFromDate(time)
+    }
+    
+    func formattedTimeHHmmss(time: NSDate) -> String {
+        let dataFormatter = NSDateFormatter()
+        dataFormatter.dateFormat = "HH:mm:ss"
+        return dataFormatter.stringFromDate(time)
+    }
+}

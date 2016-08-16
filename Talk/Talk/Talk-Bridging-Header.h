@@ -5,3 +5,4 @@
 
 #import <Foundation/Foundation.h>
 #import <EaseMobSDK/EaseMob.h>
+#import <SDWebImage/UIImageView+WebCache.h>

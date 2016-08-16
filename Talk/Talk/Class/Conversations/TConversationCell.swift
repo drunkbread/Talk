@@ -7,14 +7,38 @@
 //
 
 class TConversationCell: UITableViewCell {
-
-    @IBOutlet weak var avatarImage: UIImageView!
-    @IBOutlet weak var showNameLabel: UILabel!
-    @IBOutlet weak var msgInfoLabel: UILabel!
-    @IBOutlet weak var tlmeLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    @IBOutlet weak var conversationAvatar: UIImageView!
+    @IBOutlet weak var conversationShowName: UILabel!
+    @IBOutlet weak var conversationMsgInfo: UILabel!
+    @IBOutlet weak var conversationLastUpdateTime: UILabel!
+    @IBOutlet weak var conversationUnreadCountLabel: UILabel!
+    
+    var conversationModel: TConversationModel! {
+        didSet {
+            print(conversationModel.conversationAvatar())
+            conversationAvatar.sd_setImageWithURL(conversationModel.conversationAvatar(), placeholderImage: nil)
+            conversationShowName.text = conversationModel.conversationShowName()
+            conversationMsgInfo.text = conversationModel.conversationMsgInfo()
+            conversationLastUpdateTime.text = conversationModel.conversationLastUpdateTime()
+            if  conversationModel.conversationUnreadCount() == nil {
+                conversationUnreadCountLabel.hidden = true
+            } else {
+                conversationUnreadCountLabel.hidden = false
+                conversationUnreadCountLabel.text = conversationModel.conversationUnreadCount()
+            }
+        }
     }
     
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        conversationUnreadCountLabel.backgroundColor = UIColor.redColor()
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        conversationUnreadCountLabel.backgroundColor = UIColor.redColor()
+    }
 }
+
+

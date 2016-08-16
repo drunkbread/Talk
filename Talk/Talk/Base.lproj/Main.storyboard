@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="478" y="429"/>
         </scene>
-        <!--Item-->
+        <!--会话-->
         <scene sceneID="i8J-u1-lve">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1vN-wH-HBg" customClass="TNavigationController" customModule="Talk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="0SO-qK-hEe"/>
+                    <tabBarItem key="tabBarItem" title="会话" id="0SO-qK-hEe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LKC-Nb-avO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -63,33 +63,57 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQ0-J0-YpV">
                                             <rect key="frame" x="10" y="6" width="46" height="46"/>
+                                            <color key="backgroundColor" red="0.9993700385093689" green="0.48943769931793213" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="sQ0-J0-YpV" secondAttribute="height" multiplier="1:1" id="WKy-s2-1zH"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="6"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="1231231231231231231231231231232131231231212312312312312312312312312312321312312312" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6h-aq-Wu1">
-                                            <rect key="frame" x="63" y="6" width="441" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="1231231231231231231231231231232131231231212312312312312312312312312312321312312312" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6h-aq-Wu1">
+                                            <rect key="frame" x="63" y="8" width="456" height="22"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="27" id="5Lq-SH-0rA"/>
+                                                <constraint firstAttribute="height" constant="22" id="5Lq-SH-0rA"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ian-PY-tfB">
-                                            <rect key="frame" x="63" y="36" width="33" height="16"/>
+                                            <rect key="frame" x="63" y="31" width="33" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="16" id="uq0-oP-jBb"/>
+                                                <constraint firstAttribute="height" constant="21" id="uq0-oP-jBb"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1988-08-23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOv-eQ-6Ja">
-                                            <rect key="frame" x="511" y="6" width="75" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <rect key="frame" x="526" y="8" width="60" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC6-oP-ZrC">
+                                            <rect key="frame" x="42" y="3" width="17" height="17"/>
+                                            <color key="backgroundColor" red="0.9993700385093689" green="0.48943769931793213" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="17" id="Ycp-GM-qD3"/>
+                                                <constraint firstAttribute="width" secondItem="hC6-oP-ZrC" secondAttribute="height" multiplier="1:1" id="wqu-eV-XuO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="9"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -99,18 +123,21 @@
                                         <constraint firstItem="Ian-PY-tfB" firstAttribute="bottom" secondItem="sQ0-J0-YpV" secondAttribute="bottom" id="K1Q-5z-GJ4"/>
                                         <constraint firstItem="tOv-eQ-6Ja" firstAttribute="top" secondItem="o6h-aq-Wu1" secondAttribute="top" id="Krc-3B-zZW"/>
                                         <constraint firstItem="o6h-aq-Wu1" firstAttribute="leading" secondItem="sQ0-J0-YpV" secondAttribute="trailing" constant="7" id="UcZ-C0-2TP"/>
+                                        <constraint firstItem="hC6-oP-ZrC" firstAttribute="top" secondItem="sQ0-J0-YpV" secondAttribute="top" constant="-3" id="Wdj-w2-0Wn"/>
                                         <constraint firstAttribute="bottom" secondItem="sQ0-J0-YpV" secondAttribute="bottom" constant="6" id="ejb-8q-7Oc"/>
-                                        <constraint firstItem="o6h-aq-Wu1" firstAttribute="top" secondItem="sQ0-J0-YpV" secondAttribute="top" id="ewO-pn-Jwi"/>
+                                        <constraint firstItem="o6h-aq-Wu1" firstAttribute="top" secondItem="sQ0-J0-YpV" secondAttribute="top" constant="2" id="ewO-pn-Jwi"/>
                                         <constraint firstAttribute="trailing" secondItem="tOv-eQ-6Ja" secondAttribute="trailing" constant="14" id="fKo-vW-HuK"/>
+                                        <constraint firstItem="hC6-oP-ZrC" firstAttribute="leading" secondItem="sQ0-J0-YpV" secondAttribute="leading" constant="32" id="jUQ-Wc-0dQ"/>
                                         <constraint firstItem="tOv-eQ-6Ja" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o6h-aq-Wu1" secondAttribute="trailing" constant="7" id="msf-c4-C9y"/>
                                         <constraint firstItem="sQ0-J0-YpV" firstAttribute="leading" secondItem="0kf-Dc-J2M" secondAttribute="leadingMargin" constant="2" id="yKO-na-sEp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="avatarImage" destination="sQ0-J0-YpV" id="jK9-ik-Qs3"/>
-                                    <outlet property="msgInfoLabel" destination="Ian-PY-tfB" id="GUw-97-JQZ"/>
-                                    <outlet property="showNameLabel" destination="o6h-aq-Wu1" id="MNI-xj-uGw"/>
-                                    <outlet property="tlmeLabel" destination="tOv-eQ-6Ja" id="7bg-tj-Ehi"/>
+                                    <outlet property="conversationAvatar" destination="sQ0-J0-YpV" id="xhf-xQ-1Xj"/>
+                                    <outlet property="conversationLastUpdateTime" destination="tOv-eQ-6Ja" id="9ex-N1-L5k"/>
+                                    <outlet property="conversationMsgInfo" destination="Ian-PY-tfB" id="Oo1-Cd-k4d"/>
+                                    <outlet property="conversationShowName" destination="o6h-aq-Wu1" id="o4y-jr-370"/>
+                                    <outlet property="conversationUnreadCountLabel" destination="hC6-oP-ZrC" id="y74-33-VST"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -186,11 +213,11 @@
             </objects>
             <point key="canvasLocation" x="1992" y="1208"/>
         </scene>
-        <!--Item-->
+        <!--设置-->
         <scene sceneID="xx9-Nb-pYT">
             <objects>
                 <navigationController id="seu-rk-wIk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hZ7-s9-7BA"/>
+                    <tabBarItem key="tabBarItem" title="设置" id="hZ7-s9-7BA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFz-o0-mr5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -289,11 +316,11 @@
             </objects>
             <point key="canvasLocation" x="1479" y="1873"/>
         </scene>
-        <!--Item-->
+        <!--通讯录-->
         <scene sceneID="w6Q-xZ-mpe">
             <objects>
                 <navigationController id="cze-cK-8cp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="feD-ve-2yX"/>
+                    <tabBarItem key="tabBarItem" title="通讯录" id="feD-ve-2yX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uJV-cT-fkC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -10,7 +10,7 @@
 let chatManager = EaseMob.sharedInstance().chatManager
 
 var isLogin: Bool {
-    return chatManager.isLoggedIn || chatManager.isAutoLoginEnabled!
+    return chatManager.isAutoLoginEnabled!
 }
 
 // MARK - defineName
