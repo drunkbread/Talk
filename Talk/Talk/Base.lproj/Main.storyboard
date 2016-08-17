@@ -16,6 +16,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tabBar.tintColor">
+                            <color key="value" red="0.10196078431372549" green="0.73333333333333328" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="1vN-wH-HBg" kind="relationship" relationship="viewControllers" id="vox-y4-deH"/>
                         <segue destination="cze-cK-8cp" kind="relationship" relationship="viewControllers" id="Rtt-ar-bMA"/>
@@ -30,11 +35,12 @@
         <scene sceneID="i8J-u1-lve">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1vN-wH-HBg" customClass="TNavigationController" customModule="Talk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="会话" id="0SO-qK-hEe"/>
+                    <tabBarItem key="tabBarItem" title="会话" image="tabbar_mainframe" selectedImage="tabbar_mainframeHL" id="0SO-qK-hEe"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LKC-Nb-avO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="LKC-Nb-avO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.034684354026845637" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -45,24 +51,24 @@
             </objects>
             <point key="canvasLocation" x="1290" y="-242"/>
         </scene>
-        <!--Conversations View Controller-->
+        <!--微信-->
         <scene sceneID="H0K-Yp-ZGK">
             <objects>
                 <tableViewController id="Gs9-YR-ZkO" customClass="TConversationsViewController" customModule="Talk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" id="tuv-cd-zd8" customClass="TTableView" customModule="Talk" customModuleProvider="target">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" id="tuv-cd-zd8" customClass="TTableView" customModule="Talk" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TConversationCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TConversationCell" rowHeight="59" id="5ku-g5-Dd1" customClass="TConversationCell" customModule="Talk" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="59"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TConversationCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TConversationCell" rowHeight="73" id="5ku-g5-Dd1" customClass="TConversationCell" customModule="Talk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ku-g5-Dd1" id="0kf-Dc-J2M">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQ0-J0-YpV">
-                                            <rect key="frame" x="10" y="6" width="46" height="46"/>
+                                            <rect key="frame" x="10" y="10" width="52" height="52"/>
                                             <color key="backgroundColor" red="0.9993700385093689" green="0.48943769931793213" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="sQ0-J0-YpV" secondAttribute="height" multiplier="1:1" id="WKy-s2-1zH"/>
@@ -70,42 +76,42 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="6"/>
+                                                    <integer key="value" value="4"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="1231231231231231231231231231232131231231212312312312312312312312312312321312312312" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6h-aq-Wu1">
-                                            <rect key="frame" x="63" y="8" width="456" height="22"/>
+                                            <rect key="frame" x="69" y="13" width="441" height="25"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="5Lq-SH-0rA"/>
+                                                <constraint firstAttribute="height" constant="25" id="5Lq-SH-0rA"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ian-PY-tfB">
-                                            <rect key="frame" x="63" y="31" width="33" height="21"/>
+                                            <rect key="frame" x="69" y="38" width="40" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="uq0-oP-jBb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1988-08-23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOv-eQ-6Ja">
-                                            <rect key="frame" x="526" y="8" width="60" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="517" y="13" width="75" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC6-oP-ZrC">
-                                            <rect key="frame" x="42" y="3" width="17" height="17"/>
+                                            <rect key="frame" x="51" y="5" width="20" height="20"/>
                                             <color key="backgroundColor" red="0.9993700385093689" green="0.48943769931793213" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="17" id="Ycp-GM-qD3"/>
+                                                <constraint firstAttribute="width" constant="20" id="Ycp-GM-qD3"/>
                                                 <constraint firstAttribute="width" secondItem="hC6-oP-ZrC" secondAttribute="height" multiplier="1:1" id="wqu-eV-XuO"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
@@ -120,14 +126,14 @@
                                         <constraint firstItem="sQ0-J0-YpV" firstAttribute="centerY" secondItem="0kf-Dc-J2M" secondAttribute="centerY" id="91I-0M-yXa"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ian-PY-tfB" secondAttribute="trailing" constant="19" id="FSe-OQ-6DH"/>
                                         <constraint firstItem="Ian-PY-tfB" firstAttribute="leading" secondItem="o6h-aq-Wu1" secondAttribute="leading" id="Fhw-XJ-jVf"/>
-                                        <constraint firstItem="Ian-PY-tfB" firstAttribute="bottom" secondItem="sQ0-J0-YpV" secondAttribute="bottom" id="K1Q-5z-GJ4"/>
+                                        <constraint firstItem="Ian-PY-tfB" firstAttribute="bottom" secondItem="sQ0-J0-YpV" secondAttribute="bottom" constant="-3" id="K1Q-5z-GJ4"/>
                                         <constraint firstItem="tOv-eQ-6Ja" firstAttribute="top" secondItem="o6h-aq-Wu1" secondAttribute="top" id="Krc-3B-zZW"/>
                                         <constraint firstItem="o6h-aq-Wu1" firstAttribute="leading" secondItem="sQ0-J0-YpV" secondAttribute="trailing" constant="7" id="UcZ-C0-2TP"/>
-                                        <constraint firstItem="hC6-oP-ZrC" firstAttribute="top" secondItem="sQ0-J0-YpV" secondAttribute="top" constant="-3" id="Wdj-w2-0Wn"/>
-                                        <constraint firstAttribute="bottom" secondItem="sQ0-J0-YpV" secondAttribute="bottom" constant="6" id="ejb-8q-7Oc"/>
-                                        <constraint firstItem="o6h-aq-Wu1" firstAttribute="top" secondItem="sQ0-J0-YpV" secondAttribute="top" constant="2" id="ewO-pn-Jwi"/>
-                                        <constraint firstAttribute="trailing" secondItem="tOv-eQ-6Ja" secondAttribute="trailing" constant="14" id="fKo-vW-HuK"/>
-                                        <constraint firstItem="hC6-oP-ZrC" firstAttribute="leading" secondItem="sQ0-J0-YpV" secondAttribute="leading" constant="32" id="jUQ-Wc-0dQ"/>
+                                        <constraint firstItem="hC6-oP-ZrC" firstAttribute="top" secondItem="sQ0-J0-YpV" secondAttribute="top" constant="-5" id="Wdj-w2-0Wn"/>
+                                        <constraint firstAttribute="bottom" secondItem="sQ0-J0-YpV" secondAttribute="bottom" constant="10" id="ejb-8q-7Oc"/>
+                                        <constraint firstItem="o6h-aq-Wu1" firstAttribute="top" secondItem="sQ0-J0-YpV" secondAttribute="top" constant="3" id="ewO-pn-Jwi"/>
+                                        <constraint firstAttribute="trailing" secondItem="tOv-eQ-6Ja" secondAttribute="trailing" constant="8" id="fKo-vW-HuK"/>
+                                        <constraint firstItem="hC6-oP-ZrC" firstAttribute="leading" secondItem="sQ0-J0-YpV" secondAttribute="leading" constant="41" id="jUQ-Wc-0dQ"/>
                                         <constraint firstItem="tOv-eQ-6Ja" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o6h-aq-Wu1" secondAttribute="trailing" constant="7" id="msf-c4-C9y"/>
                                         <constraint firstItem="sQ0-J0-YpV" firstAttribute="leading" secondItem="0kf-Dc-J2M" secondAttribute="leadingMargin" constant="2" id="yKO-na-sEp"/>
                                     </constraints>
@@ -146,7 +152,7 @@
                             <outlet property="delegate" destination="Gs9-YR-ZkO" id="Tkp-VY-rSu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nY5-xj-LKG"/>
+                    <navigationItem key="navigationItem" title="微信" id="nY5-xj-LKG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlH-0I-Duh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,14 +216,15 @@
             </objects>
             <point key="canvasLocation" x="1992" y="1208"/>
         </scene>
-        <!--设置-->
+        <!--我-->
         <scene sceneID="xx9-Nb-pYT">
             <objects>
                 <navigationController id="seu-rk-wIk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" id="hZ7-s9-7BA"/>
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_me" selectedImage="tabbar_meHL" id="hZ7-s9-7BA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFz-o0-mr5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.034684354026845637" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Jpw-3S-ui1" kind="relationship" relationship="rootViewController" id="XVX-7X-rtw"/>
@@ -317,10 +324,11 @@
         <scene sceneID="w6Q-xZ-mpe">
             <objects>
                 <navigationController id="cze-cK-8cp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="通讯录" id="feD-ve-2yX"/>
+                    <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_contacts" selectedImage="tabbar_contactsHL" id="feD-ve-2yX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uJV-cT-fkC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.034684354026845637" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="zYP-J1-SVE" kind="relationship" relationship="rootViewController" id="rTm-VQ-YUl"/>
@@ -349,4 +357,12 @@
             <point key="canvasLocation" x="478" y="1989"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabbar_contacts" width="27" height="23"/>
+        <image name="tabbar_contactsHL" width="27" height="23"/>
+        <image name="tabbar_mainframe" width="25" height="23"/>
+        <image name="tabbar_mainframeHL" width="25" height="23"/>
+        <image name="tabbar_me" width="23" height="23"/>
+        <image name="tabbar_meHL" width="23" height="23"/>
+    </resources>
 </document>

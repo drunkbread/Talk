@@ -12,7 +12,10 @@ class TNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationBar.titleTextAttributes = [
+            NSFontAttributeName : UIFont.systemFontOfSize(18, weight: 3)
+        ]
         // Do any additional setup after loading the view.
     }
 
