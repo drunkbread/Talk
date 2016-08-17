@@ -15,7 +15,7 @@ class TConversationsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         addEaseMobDelegate()
-        chatManager.loadAllConversationsFromDatabaseWithAppend2Chat!(true)
+        loadAllConversations()
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,6 +91,11 @@ class TConversationsViewController: UITableViewController{
 extension TConversationsViewController: EMChatManagerDelegate{
     func addEaseMobDelegate() {
         chatManager.addDelegate(self, delegateQueue: nil)
+    }
+    
+    func loadAllConversations() {
+        // 这个方法是从db里load conversations，后面传true，取到后就会走对应的回调（ didUpdateConversationList:）
+        chatManager.loadAllConversationsFromDatabaseWithAppend2Chat!(true)
     }
     
     // 会话列表数量变更回调

@@ -13,6 +13,7 @@ class TNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 修改navigationBar 显示的 字体样式
         navigationBar.titleTextAttributes = [
             NSFontAttributeName : UIFont.systemFontOfSize(18, weight: 3)
         ]

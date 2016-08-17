@@ -25,6 +25,9 @@ protocol TConversationModelDelegate {
     
     // 会话的未读消息数
     func conversationUnreadCount() -> String?
+    
+    // 最后一条消息的显示颜色 (如果是未读的音频，需要显示红色)
+    func conversationMsgInfoColor() -> UIColor
 }
 
 
@@ -81,5 +84,9 @@ class TConversationModel: NSObject, TConversationModelDelegate{
         }else {
             return nil
         }
+    }
+    
+    func conversationMsgInfoColor() -> UIColor {
+        return UIColor.lightGrayColor()
     }
 }

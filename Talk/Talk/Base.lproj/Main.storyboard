@@ -15,12 +15,12 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lb5-vd-wxR">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                <color key="value" red="0.10196078431372549" green="0.73333333333333328" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="tabBar.tintColor">
-                            <color key="value" red="0.10196078431372549" green="0.73333333333333328" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="1vN-wH-HBg" kind="relationship" relationship="viewControllers" id="vox-y4-deH"/>
                         <segue destination="cze-cK-8cp" kind="relationship" relationship="viewControllers" id="Rtt-ar-bMA"/>
@@ -74,9 +74,8 @@
                                                 <constraint firstAttribute="width" secondItem="sQ0-J0-YpV" secondAttribute="height" multiplier="1:1" id="WKy-s2-1zH"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="4"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="7"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
@@ -90,7 +89,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ian-PY-tfB">
-                                            <rect key="frame" x="69" y="38" width="40" height="21"/>
+                                            <rect key="frame" x="69" y="40" width="40" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="uq0-oP-jBb"/>
                                             </constraints>
@@ -115,9 +114,8 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="9"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>
@@ -126,7 +124,7 @@
                                         <constraint firstItem="sQ0-J0-YpV" firstAttribute="centerY" secondItem="0kf-Dc-J2M" secondAttribute="centerY" id="91I-0M-yXa"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ian-PY-tfB" secondAttribute="trailing" constant="19" id="FSe-OQ-6DH"/>
                                         <constraint firstItem="Ian-PY-tfB" firstAttribute="leading" secondItem="o6h-aq-Wu1" secondAttribute="leading" id="Fhw-XJ-jVf"/>
-                                        <constraint firstItem="Ian-PY-tfB" firstAttribute="bottom" secondItem="sQ0-J0-YpV" secondAttribute="bottom" constant="-3" id="K1Q-5z-GJ4"/>
+                                        <constraint firstItem="Ian-PY-tfB" firstAttribute="bottom" secondItem="sQ0-J0-YpV" secondAttribute="bottom" constant="-1" id="K1Q-5z-GJ4"/>
                                         <constraint firstItem="tOv-eQ-6Ja" firstAttribute="top" secondItem="o6h-aq-Wu1" secondAttribute="top" id="Krc-3B-zZW"/>
                                         <constraint firstItem="o6h-aq-Wu1" firstAttribute="leading" secondItem="sQ0-J0-YpV" secondAttribute="trailing" constant="7" id="UcZ-C0-2TP"/>
                                         <constraint firstItem="hC6-oP-ZrC" firstAttribute="top" secondItem="sQ0-J0-YpV" secondAttribute="top" constant="-5" id="Wdj-w2-0Wn"/>

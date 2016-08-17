@@ -7,6 +7,35 @@
 //
 
 
+extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return self.layer.cornerRadius
+        }
+        
+        set {
+            if newValue > 0 {
+                self.layer.masksToBounds = true
+            } else {
+                self.layer.masksToBounds = false
+            }
+            self.layer.cornerRadius = newValue
+        }
+    }
+}
+
+extension UITabBar {
+    @IBInspectable var selectedColor: UIColor {
+        get {
+            return tintColor
+        }
+        
+        set {
+            tintColor = newValue
+        }
+    }
+}
+
 extension UITableView {
     func hiddenFootView() {
         tableFooterView = UIView()
@@ -20,7 +49,7 @@ extension UIStoryboard {
 }
 
 extension NSNotificationCenter {
-
+    
 }
 
 extension String {
@@ -35,24 +64,38 @@ extension NSDate{
             dUnixTime = dUnixTime/1000
         }
         let date = NSDate.init(timeIntervalSince1970: dUnixTime)
-        return self.formattedTimeYYYYMMddHHmmss(date)
+        let today = NSDate.today()
+        
+        if  date.isInToday() {
+            return self.formattedTimeHHmm(date)
+        } else if today.add(days: -1).isInSameDayAsDate(date) /* 昨天 */ {
+            return "昨天"
+        } else if today.add(days: -2).isInSameDayAsDate(date) /* 前天 */ {
+            return "前天"
+        } else if (today.weekday == date.weekday) /* 本周 */ {
+            return formattedTimeMMddHHmm(date)
+        } else if (today.year == date.year) /* 本年 */ {
+            return formattedTimeMMddHHmm(date)
+        } else { /* 非本年 */
+            return formattedTimeYYYYMMddHHmm(date)
+        }
     }
     
-    func formattedTimeYYYYMMddHHmmss(time: NSDate) -> String {
+    func formattedTimeYYYYMMddHHmm(time: NSDate) -> String {
         let dataFormatter = NSDateFormatter()
-        dataFormatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        dataFormatter.dateFormat = "yyyy年MM月dd日 HH:mm"
         return dataFormatter.stringFromDate(time)
     }
     
-    func formattedTimeMMddHHmmss(time: NSDate) -> String {
+    func formattedTimeMMddHHmm(time: NSDate) -> String {
         let dataFormatter = NSDateFormatter()
-        dataFormatter.dateFormat = "MM月dd日 HH:mm:ss"
+        dataFormatter.dateFormat = "MM月dd日 HH:mm"
         return dataFormatter.stringFromDate(time)
     }
     
-    func formattedTimeHHmmss(time: NSDate) -> String {
+    func formattedTimeHHmm(time: NSDate) -> String {
         let dataFormatter = NSDateFormatter()
-        dataFormatter.dateFormat = "HH:mm:ss"
+        dataFormatter.dateFormat = "HH:mm"
         return dataFormatter.stringFromDate(time)
     }
 }

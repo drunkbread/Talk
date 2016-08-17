@@ -3,13 +3,16 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SwiftDate (3.0.8)
 
 DEPENDENCIES:
   - EaseMobSDK (~> 2.2.6)
   - SDWebImage (~> 3.8.1)
+  - SwiftDate (~> 3.0.8)
 
 SPEC CHECKSUMS:
   EaseMobSDK: 52711b765870c8e48637fc4057335468601fe849
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
 
 COCOAPODS: 0.39.0
