@@ -56,13 +56,19 @@ class TConversationsViewController: UITableViewController{
                 {
                     let conversationModel = self.datasource?.removeAtIndex(indexPath.row)
                     chatManager.removeConversationsByChatters!([(conversationModel?.conversationChatter())!], deleteMessages: true, append2Chat: true)
-                    tableView.deleteRowsAtIndexPaths([index], withRowAnimation: UITableViewRowAnimation.Automatic)
-                }.main(after:0.1) {
+                    tableView.beginUpdates()
+                    tableView.deleteRowsAtIndexPaths([index], withRowAnimation: UITableViewRowAnimation.None)
+                    tableView.endUpdates()
+                }.main(after:3) {
                     self.conversationsToModel(chatManager.conversations)
             }
         })
         
         return [action2]
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
     
     /*
@@ -100,16 +106,17 @@ class TConversationsViewController: UITableViewController{
      }
      */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }1
-     */
     
+     // MARK: - Navigation
+    
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if ((sender?.isKindOfClass(TConversationCell.classForCoder())) != nil)
+            && segue.destinationViewController.isKindOfClass(TChatViewController.classForCoder()){
+            let cell = sender as! TConversationCell
+            let vc = segue.destinationViewController as! TChatViewController
+            vc.chatter = cell.conversationModel.conversationChatter()
+        }
+     }
 }
 
 // MARK - EaseMob

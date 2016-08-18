@@ -40,6 +40,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="LKC-Nb-avO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="0.034684354026845637" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -142,6 +143,7 @@
                                     <outlet property="conversationMsgInfo" destination="Ian-PY-tfB" id="Oo1-Cd-k4d"/>
                                     <outlet property="conversationShowName" destination="o6h-aq-Wu1" id="o4y-jr-370"/>
                                     <outlet property="conversationUnreadCountLabel" destination="hC6-oP-ZrC" id="y74-33-VST"/>
+                                    <segue destination="pWg-8t-WrP" kind="push" id="MKs-hw-XBc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -155,6 +157,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlH-0I-Duh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1992" y="-242"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="dho-Jy-0I5">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="pWg-8t-WrP" customClass="TChatViewController" customModule="Talk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5UC-hg-jJI" customClass="TTableView" customModule="Talk" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TChatCell" id="KdS-RP-Zfk" customClass="TChatCell" customModule="Talk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KdS-RP-Zfk" id="Awg-xu-ml3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pWg-8t-WrP" id="lL7-5T-xjR"/>
+                            <outlet property="delegate" destination="pWg-8t-WrP" id="687-J4-fQJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qna-ao-qmZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzw-gS-Ohz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2717" y="-242"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="wNR-cx-bFv">
@@ -326,6 +357,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uJV-cT-fkC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="0.034684354026845637" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
@@ -344,6 +376,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lQ3-Zi-aFD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

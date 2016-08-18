@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900497091D65CF0E00FE57A2 /* TChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900497081D65CF0E00FE57A2 /* TChatViewController.swift */; };
+		9004970B1D65D26D00FE57A2 /* TChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004970A1D65D26D00FE57A2 /* TChatCell.swift */; };
 		900C39901D61BFC9007F3E9B /* TConversationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C398F1D61BFC9007F3E9B /* TConversationModel.swift */; };
 		900C39921D61E4A1007F3E9B /* TConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C39911D61E4A1007F3E9B /* TConversationCell.swift */; };
 		90A4B4961D6314F4007BBCEA /* EaseMobExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4B4951D6314F4007BBCEA /* EaseMobExtension.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		900497081D65CF0E00FE57A2 /* TChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatViewController.swift; sourceTree = "<group>"; };
+		9004970A1D65D26D00FE57A2 /* TChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatCell.swift; sourceTree = "<group>"; };
 		900C398F1D61BFC9007F3E9B /* TConversationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConversationModel.swift; sourceTree = "<group>"; };
 		900C39911D61E4A1007F3E9B /* TConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConversationCell.swift; sourceTree = "<group>"; };
 		90A4B4951D6314F4007BBCEA /* EaseMobExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EaseMobExtension.swift; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		900497071D65CEF800FE57A2 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				900497081D65CF0E00FE57A2 /* TChatViewController.swift */,
+				9004970A1D65D26D00FE57A2 /* TChatCell.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		90B4C28C1D5D8D55004721B9 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 		90B4C2AE1D5D9844004721B9 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				900497071D65CEF800FE57A2 /* Chat */,
 				90B4C2E81D5DCD76004721B9 /* Login */,
 				90B4C2AF1D5D998F004721B9 /* Contacts */,
 				90B4C2B01D5D998F004721B9 /* Conversations */,
@@ -413,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9004970B1D65D26D00FE57A2 /* TChatCell.swift in Sources */,
 				90B4C2EA1D5DCD9D004721B9 /* TLoginViewController.swift in Sources */,
 				90B4C2B81D5D9AD0004721B9 /* TConversationsViewController.swift in Sources */,
 				90B4C2991D5D8D55004721B9 /* AppDelegate.swift in Sources */,
@@ -422,6 +437,7 @@
 				90B4C2C51D5DAA94004721B9 /* TTableView.swift in Sources */,
 				90B4C2EC1D5DD7C2004721B9 /* THeaders.swift in Sources */,
 				90A4B4961D6314F4007BBCEA /* EaseMobExtension.swift in Sources */,
+				900497091D65CF0E00FE57A2 /* TChatViewController.swift in Sources */,
 				90B4C2C71D5DAC1C004721B9 /* TExtension.swift in Sources */,
 				90B4C2B61D5D9A3D004721B9 /* TContactsViewController.swift in Sources */,
 				90B4C2BA1D5D9AE1004721B9 /* TSettingsViewController.swift in Sources */,

@@ -22,6 +22,46 @@ extension UIView {
             self.layer.cornerRadius = newValue
         }
     }
+    
+    var x: CGFloat {
+        get {
+            return self.frame.origin.x
+        }
+    }
+    
+    var y: CGFloat {
+        get {
+            return self.frame.origin.y
+        }
+    }
+    
+    var width: CGFloat {
+        get {
+            return self.frame.size.width
+        }
+    }
+    
+    var height: CGFloat {
+        get {
+            return self.frame.size.height
+        }
+    }
+    
+    func setX (x: CGFloat) {
+        self.frame.origin.x = x
+    }
+    
+    func setY (y: CGFloat) {
+        self.frame.origin.y = y
+    }
+    
+    func setWidth (width: CGFloat) {
+        self.frame.size.width = width
+    }
+    
+    func setHeight (height: CGFloat) {
+        self.frame.size.height = height
+    }
 }
 
 extension UITabBar {
