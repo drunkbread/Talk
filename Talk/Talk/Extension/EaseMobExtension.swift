@@ -7,7 +7,7 @@
 //
 
 extension EMMessage {
-    func msgBodyType() -> MessageBodyType {
+    func msgBodyType() -> MessageBodyType? {
         let body = messageBodies.first as! IEMMessageBody
         return body.messageBodyType
     }

@@ -108,17 +108,35 @@ extension TConversationsViewController: EMChatManagerDelegate{
         conversationsToModel(chatManager.conversations)
     }
     
-    func conversationsToModel(ary: Array <AnyObject>?) {
+    func backwards(time1: Double, time2: Double) -> Bool {
+        return time1 > time2
+    }
+    
+    func conversationsToModel( ary: Array <AnyObject>?) {
         datasource?.removeAll()
+        let conversations = ary?.sort(
+            { conversation1 , conversation2 in
+                let c1 = conversation1 as! EMConversation
+                let c2 = conversation2 as! EMConversation
+                return c1.latestMessage()?.timestamp ?? 0 >= c2.latestMessage()?.timestamp ?? 0
+            }
+        )
+        
+        var unreadCount: UInt = 0
         if  ary != nil {
-            for conversation in ary! {
+            for conversation in conversations! {
                 if datasource == nil {
                     datasource = Array()
                 }
-                datasource?.append(TConversationModel(conversation: conversation as! EMConversation))
+                let c = conversation as! EMConversation
+                datasource?.append(TConversationModel(conversation: c))
+                unreadCount += c.unreadMessagesCount() ?? 0
             }
             
             tableView.reloadData()
+            navigationController?.tabBarItem.badgeValue = String(unreadCount)
+        } else {
+            navigationController?.tabBarItem.badgeValue = nil
         }
     }
     

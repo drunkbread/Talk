@@ -16,7 +16,6 @@ class TConversationCell: UITableViewCell {
     
     var conversationModel: TConversationModel! {
         didSet {
-            print(conversationModel.conversationAvatar())
             conversationAvatar.sd_setImageWithURL(conversationModel.conversationAvatar(), placeholderImage: nil)
             conversationShowName.text = conversationModel.conversationShowName()
             conversationMsgInfo.text = conversationModel.conversationMsgInfo()

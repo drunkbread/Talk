@@ -57,22 +57,27 @@ class TConversationModel: NSObject, TConversationModelDelegate{
     func conversationMsgInfo() -> String? {
         let ret: String!
         let msg = conversation.latestMessage()
-        switch msg.msgBodyType() {
-        case MessageBodyType.eMessageBodyType_Text :
-            ret = msg.text()
-        case MessageBodyType.eMessageBodyType_Image :
-            ret = "[图片]"
-        case MessageBodyType.eMessageBodyType_Video :
-            ret = "[视频]"
-        case MessageBodyType.eMessageBodyType_Voice :
-            ret = "[音频]"
-        case MessageBodyType.eMessageBodyType_Location :
-            ret = "[位置]"
-        case MessageBodyType.eMessageBodyType_File :
-            ret = "[文件]"
-        default:
+        if msg.msgBodyType() != nil {
+            switch msg.msgBodyType()! {
+            case MessageBodyType.eMessageBodyType_Text :
+                ret = msg.text()
+            case MessageBodyType.eMessageBodyType_Image :
+                ret = "[图片]"
+            case MessageBodyType.eMessageBodyType_Video :
+                ret = "[视频]"
+            case MessageBodyType.eMessageBodyType_Voice :
+                ret = "[音频]"
+            case MessageBodyType.eMessageBodyType_Location :
+                ret = "[位置]"
+            case MessageBodyType.eMessageBodyType_File :
+                ret = "[文件]"
+            default:
+                ret = ""
+            }
+        } else {
             ret = ""
         }
+        
         return ret
     }
     
