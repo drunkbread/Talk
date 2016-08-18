@@ -14,6 +14,9 @@ protocol TConversationModelDelegate {
     // 会话显示的头像
     func conversationAvatar() -> NSURL?
     
+    // 返回会话id
+    func conversationChatter() -> String
+    
     // 会话显示的名称
     func conversationShowName() -> String
     
@@ -46,6 +49,10 @@ class TConversationModel: NSObject, TConversationModelDelegate{
     
     func conversationShowName() -> String {
         // 如果有名字，这里要加上名字的判断
+        return conversation.chatter
+    }
+    
+    func conversationChatter() -> String{
         return conversation.chatter
     }
     
@@ -93,5 +100,13 @@ class TConversationModel: NSObject, TConversationModelDelegate{
     
     func conversationMsgInfoColor() -> UIColor {
         return UIColor.lightGrayColor()
+    }
+    
+    func makeConversationAsRead() {
+        conversation.markAllMessagesAsRead(true)
+    }
+    
+    func makeConversationAsUnread() {
+        conversation.markMessageWithId(conversation.latestMessage().messageId, asRead: false)
     }
 }

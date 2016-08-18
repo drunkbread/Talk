@@ -9,6 +9,7 @@
 import UIKit
 import SwiftDate
 import SDWebImage
+import Async
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

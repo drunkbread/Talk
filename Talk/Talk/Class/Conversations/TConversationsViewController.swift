@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Async
 
 class TConversationsViewController: UITableViewController{
     
@@ -39,6 +40,30 @@ class TConversationsViewController: UITableViewController{
         return cell
     }
     
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        //        let conversationModel = datasource?[indexPath.row]
+        //        let str = conversationModel?.conversationUnreadCount() != nil ? "标为已读" : "标为未读"
+        //        let action1 = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: str, handler: { (action, index) in
+        //            if conversationModel?.conversationUnreadCount() != nil {
+        //                conversationModel!.makeConversationAsRead()
+        //            } else {
+        //                conversationModel!.makeConversationAsUnread()
+        //            }
+        //        })
+        
+        let action2 = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "删除", handler: { (action, index) in
+            Async.main
+                {
+                    let conversationModel = self.datasource?.removeAtIndex(indexPath.row)
+                    chatManager.removeConversationsByChatters!([(conversationModel?.conversationChatter())!], deleteMessages: true, append2Chat: true)
+                    tableView.deleteRowsAtIndexPaths([index], withRowAnimation: UITableViewRowAnimation.Automatic)
+                }.main(after:0.1) {
+                    self.conversationsToModel(chatManager.conversations)
+            }
+        })
+        
+        return [action2]
+    }
     
     /*
      // Override to support conditional editing of the table view.
@@ -96,20 +121,22 @@ extension TConversationsViewController: EMChatManagerDelegate{
     func loadAllConversations() {
         // 这个方法是从db里load conversations，后面传true，取到后就会走对应的回调（ didUpdateConversationList:）
         chatManager.loadAllConversationsFromDatabaseWithAppend2Chat!(true)
+        conversationsToModel(chatManager.conversations)
     }
     
     // 会话列表数量变更回调
     func didUpdateConversationList(conversationList: [AnyObject]!) {
-        conversationsToModel(chatManager.conversations)
+        //        conversationsToModel(chatManager.conversations)
+    }
+    
+    // 消息的未读数变化
+    func didUnreadMessagesCountChanged() {
+        //        conversationsToModel(chatManager.conversations)
     }
     
     // 收消息回调
     func didReceiveMessage(message: EMMessage!) {
         conversationsToModel(chatManager.conversations)
-    }
-    
-    func backwards(time1: Double, time2: Double) -> Bool {
-        return time1 > time2
     }
     
     func conversationsToModel( ary: Array <AnyObject>?) {
@@ -123,21 +150,23 @@ extension TConversationsViewController: EMChatManagerDelegate{
         )
         
         var unreadCount: UInt = 0
-        if  ary != nil {
-            for conversation in conversations! {
-                if datasource == nil {
-                    datasource = Array()
-                }
-                let c = conversation as! EMConversation
-                datasource?.append(TConversationModel(conversation: c))
-                unreadCount += c.unreadMessagesCount() ?? 0
+        
+        for conversation in conversations! {
+            if datasource == nil {
+                datasource = Array()
             }
-            
-            tableView.reloadData()
+            let c = conversation as! EMConversation
+            datasource?.append(TConversationModel(conversation: c))
+            unreadCount += c.unreadMessagesCount() ?? 0
+        }
+        
+        tableView.reloadData()
+        if unreadCount > 0 {
             navigationController?.tabBarItem.badgeValue = String(unreadCount)
         } else {
             navigationController?.tabBarItem.badgeValue = nil
         }
+        
     }
     
     func didAutoLoginWithInfo(loginInfo: [NSObject : AnyObject]!, error: EMError!) {

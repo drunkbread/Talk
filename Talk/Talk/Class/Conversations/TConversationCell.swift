@@ -26,7 +26,7 @@ class TConversationCell: UITableViewCell {
                 conversationUnreadCountLabel.hidden = false
                 conversationUnreadCountLabel.text = conversationModel.conversationUnreadCount()
             }
-            
+        
             conversationMsgInfo.textColor = conversationModel.conversationMsgInfoColor()
         }
     }

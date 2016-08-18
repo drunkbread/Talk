@@ -7,5 +7,6 @@ target 'Talk' do
 pod 'EaseMobSDK', '~> 2.2.6'
 pod 'SDWebImage', '~> 3.8.1'
 pod 'SwiftDate', '~> 3.0.8'
+pod 'AsyncSwift', '~> 1.7.3'
 end
 
