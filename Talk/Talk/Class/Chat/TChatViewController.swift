@@ -26,13 +26,13 @@ class TChatViewController: UITableViewController {
     }
     
     func registerTableCell() {
-        tableView.registerClass(TChatTextCell.classForCoder(), forCellReuseIdentifier: "TChatTextCell_Right")
-        tableView.registerClass(TChatTextCell.classForCoder(), forCellReuseIdentifier: "TChatTextCell_Left")
-        tableView.registerClass(TChatImageCell.classForCoder(), forCellReuseIdentifier: "TChatImageCell_Right")
+        tableView.registerNib(UINib(nibName: "TChatTextCell_Left", bundle: nil), forCellReuseIdentifier: "TChatTextCell_Left")
+        tableView.registerNib(UINib(nibName: "TChatTextCell_Right", bundle: nil), forCellReuseIdentifier: "TChatTextCell_Right")
     }
 
     /*
     // MARK: - Navigation
+     
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -46,7 +46,7 @@ class TChatViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TChatTextCell_Left") as! TChatTextCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TChatTextCell_Right") as! TChatTextCell
         cell.model = datasource![indexPath.row]
         return cell
     }
@@ -62,7 +62,7 @@ extension TChatViewController {
             datasource = Array()
         }
         let msgId = datasource!.last?.messageId()
-        let messages = conversationModel.conversation .loadNumbersOfMessages(count, withMessageId: msgId) as Array
+        let messages = conversationModel.conversation.loadNumbersOfMessages(count, withMessageId: msgId) as Array
         for message in messages {
             let msgModel = TMessageCellModel(message: message as! EMMessage)
             datasource?.append(msgModel)

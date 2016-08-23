@@ -12,6 +12,5 @@ class TTableView: UITableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         hiddenFootView()
-
     }
 }
