@@ -8,9 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		900497091D65CF0E00FE57A2 /* TChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900497081D65CF0E00FE57A2 /* TChatViewController.swift */; };
-		9004970B1D65D26D00FE57A2 /* TChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004970A1D65D26D00FE57A2 /* TChatCell.swift */; };
 		900C39901D61BFC9007F3E9B /* TConversationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C398F1D61BFC9007F3E9B /* TConversationModel.swift */; };
 		900C39921D61E4A1007F3E9B /* TConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C39911D61E4A1007F3E9B /* TConversationCell.swift */; };
+		90A0C4681D66B6A900B41FAB /* TChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C4641D66B6A900B41FAB /* TChatCell.swift */; };
+		90A0C4741D66B74500B41FAB /* TChatTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C46F1D66B74500B41FAB /* TChatTextCell.swift */; };
+		90A0C47E1D66B89100B41FAB /* TChatLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C47D1D66B89100B41FAB /* TChatLocationCell.swift */; };
+		90A0C4801D66B89D00B41FAB /* TChatLocationCell_Left.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C47F1D66B89D00B41FAB /* TChatLocationCell_Left.swift */; };
+		90A0C4821D66B8A800B41FAB /* TChatLocationCell_Right.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C4811D66B8A800B41FAB /* TChatLocationCell_Right.swift */; };
+		90A0C4841D66B8B900B41FAB /* TChatImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C4831D66B8B900B41FAB /* TChatImageCell.swift */; };
+		90A0C4861D66B8CA00B41FAB /* TChatImageCell_Left.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C4851D66B8CA00B41FAB /* TChatImageCell_Left.swift */; };
+		90A0C4881D66B8D300B41FAB /* TChatImageCell_Right.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C4871D66B8D300B41FAB /* TChatImageCell_Right.swift */; };
+		90A0C48A1D66B8F400B41FAB /* TChatVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C4891D66B8F400B41FAB /* TChatVoiceCell.swift */; };
+		90A0C48C1D66B90000B41FAB /* TChatVoiceCell_Left.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C48B1D66B90000B41FAB /* TChatVoiceCell_Left.swift */; };
+		90A0C48E1D66B90700B41FAB /* TChatVoiceCell_Right.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C48D1D66B90700B41FAB /* TChatVoiceCell_Right.swift */; };
+		90A0C4941D67120700B41FAB /* TChatVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0C4931D67120700B41FAB /* TChatVideoCell.swift */; };
+		90A0C4961D67130500B41FAB /* TChatVideoCell_Left.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A0C4951D67130500B41FAB /* TChatVideoCell_Left.xib */; };
+		90A0C49E1D67136000B41FAB /* TChatTextCell_Right.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A0C49D1D67136000B41FAB /* TChatTextCell_Right.xib */; };
 		90A4B4961D6314F4007BBCEA /* EaseMobExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4B4951D6314F4007BBCEA /* EaseMobExtension.swift */; };
 		90B4C2991D5D8D55004721B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B4C2981D5D8D55004721B9 /* AppDelegate.swift */; };
 		90B4C29E1D5D8D55004721B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B4C29C1D5D8D55004721B9 /* Main.storyboard */; };
@@ -25,6 +38,9 @@
 		90B4C2C71D5DAC1C004721B9 /* TExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B4C2C61D5DAC1C004721B9 /* TExtension.swift */; };
 		90B4C2EA1D5DCD9D004721B9 /* TLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B4C2E91D5DCD9D004721B9 /* TLoginViewController.swift */; };
 		90B4C2EC1D5DD7C2004721B9 /* THeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B4C2EB1D5DD7C2004721B9 /* THeaders.swift */; };
+		90C4D8271D6AA26D005CFE9B /* TMessageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4D8261D6AA26D005CFE9B /* TMessageCellModel.swift */; };
+		90C4D8291D6AB076005CFE9B /* TChatCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4D8281D6AB076005CFE9B /* TChatCellManager.swift */; };
+		90C4D82B1D6AF682005CFE9B /* TChatTextCell_Left.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90C4D82A1D6AF682005CFE9B /* TChatTextCell_Left.xib */; };
 		90D1431D1D64155F006752B2 /* tabbar_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1430D1D64155F006752B2 /* tabbar_contacts@2x.png */; };
 		90D1431E1D64155F006752B2 /* tabbar_contacts@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1430E1D64155F006752B2 /* tabbar_contacts@3x.png */; };
 		90D1431F1D64155F006752B2 /* tabbar_contactsHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1430F1D64155F006752B2 /* tabbar_contactsHL@2x.png */; };
@@ -46,9 +62,22 @@
 
 /* Begin PBXFileReference section */
 		900497081D65CF0E00FE57A2 /* TChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatViewController.swift; sourceTree = "<group>"; };
-		9004970A1D65D26D00FE57A2 /* TChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatCell.swift; sourceTree = "<group>"; };
 		900C398F1D61BFC9007F3E9B /* TConversationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConversationModel.swift; sourceTree = "<group>"; };
 		900C39911D61E4A1007F3E9B /* TConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConversationCell.swift; sourceTree = "<group>"; };
+		90A0C4641D66B6A900B41FAB /* TChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatCell.swift; sourceTree = "<group>"; };
+		90A0C46F1D66B74500B41FAB /* TChatTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatTextCell.swift; sourceTree = "<group>"; };
+		90A0C47D1D66B89100B41FAB /* TChatLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatLocationCell.swift; sourceTree = "<group>"; };
+		90A0C47F1D66B89D00B41FAB /* TChatLocationCell_Left.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatLocationCell_Left.swift; sourceTree = "<group>"; };
+		90A0C4811D66B8A800B41FAB /* TChatLocationCell_Right.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatLocationCell_Right.swift; sourceTree = "<group>"; };
+		90A0C4831D66B8B900B41FAB /* TChatImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatImageCell.swift; sourceTree = "<group>"; };
+		90A0C4851D66B8CA00B41FAB /* TChatImageCell_Left.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatImageCell_Left.swift; sourceTree = "<group>"; };
+		90A0C4871D66B8D300B41FAB /* TChatImageCell_Right.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatImageCell_Right.swift; sourceTree = "<group>"; };
+		90A0C4891D66B8F400B41FAB /* TChatVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatVoiceCell.swift; sourceTree = "<group>"; };
+		90A0C48B1D66B90000B41FAB /* TChatVoiceCell_Left.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatVoiceCell_Left.swift; sourceTree = "<group>"; };
+		90A0C48D1D66B90700B41FAB /* TChatVoiceCell_Right.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatVoiceCell_Right.swift; sourceTree = "<group>"; };
+		90A0C4931D67120700B41FAB /* TChatVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatVideoCell.swift; sourceTree = "<group>"; };
+		90A0C4951D67130500B41FAB /* TChatVideoCell_Left.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TChatVideoCell_Left.xib; sourceTree = "<group>"; };
+		90A0C49D1D67136000B41FAB /* TChatTextCell_Right.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TChatTextCell_Right.xib; sourceTree = "<group>"; };
 		90A4B4951D6314F4007BBCEA /* EaseMobExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EaseMobExtension.swift; sourceTree = "<group>"; };
 		90B4C2951D5D8D55004721B9 /* Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B4C2981D5D8D55004721B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +95,9 @@
 		90B4C2C61D5DAC1C004721B9 /* TExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TExtension.swift; sourceTree = "<group>"; };
 		90B4C2E91D5DCD9D004721B9 /* TLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLoginViewController.swift; sourceTree = "<group>"; };
 		90B4C2EB1D5DD7C2004721B9 /* THeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THeaders.swift; sourceTree = "<group>"; };
+		90C4D8261D6AA26D005CFE9B /* TMessageCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMessageCellModel.swift; sourceTree = "<group>"; };
+		90C4D8281D6AB076005CFE9B /* TChatCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatCellManager.swift; sourceTree = "<group>"; };
+		90C4D82A1D6AF682005CFE9B /* TChatTextCell_Left.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TChatTextCell_Left.xib; sourceTree = "<group>"; };
 		90D1430D1D64155F006752B2 /* tabbar_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@2x.png"; sourceTree = "<group>"; };
 		90D1430E1D64155F006752B2 /* tabbar_contacts@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@3x.png"; sourceTree = "<group>"; };
 		90D1430F1D64155F006752B2 /* tabbar_contactsHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contactsHL@2x.png"; sourceTree = "<group>"; };
@@ -102,10 +134,74 @@
 		900497071D65CEF800FE57A2 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				90A0C4631D66B6A900B41FAB /* TChatCell */,
 				900497081D65CF0E00FE57A2 /* TChatViewController.swift */,
-				9004970A1D65D26D00FE57A2 /* TChatCell.swift */,
+				90C4D8261D6AA26D005CFE9B /* TMessageCellModel.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		90A0C4631D66B6A900B41FAB /* TChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				90A0C46C1D66B74500B41FAB /* TChatImageCell */,
+				90A0C46D1D66B74500B41FAB /* TChatLocationCell */,
+				90A0C46E1D66B74500B41FAB /* TChatTextCell */,
+				90A0C4721D66B74500B41FAB /* TChatVideoCell */,
+				90A0C4731D66B74500B41FAB /* TChatVoiceCell */,
+				90A0C4641D66B6A900B41FAB /* TChatCell.swift */,
+				90C4D8281D6AB076005CFE9B /* TChatCellManager.swift */,
+			);
+			path = TChatCell;
+			sourceTree = "<group>";
+		};
+		90A0C46C1D66B74500B41FAB /* TChatImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				90A0C4831D66B8B900B41FAB /* TChatImageCell.swift */,
+				90A0C4851D66B8CA00B41FAB /* TChatImageCell_Left.swift */,
+				90A0C4871D66B8D300B41FAB /* TChatImageCell_Right.swift */,
+			);
+			path = TChatImageCell;
+			sourceTree = "<group>";
+		};
+		90A0C46D1D66B74500B41FAB /* TChatLocationCell */ = {
+			isa = PBXGroup;
+			children = (
+				90A0C47D1D66B89100B41FAB /* TChatLocationCell.swift */,
+				90A0C47F1D66B89D00B41FAB /* TChatLocationCell_Left.swift */,
+				90A0C4811D66B8A800B41FAB /* TChatLocationCell_Right.swift */,
+			);
+			path = TChatLocationCell;
+			sourceTree = "<group>";
+		};
+		90A0C46E1D66B74500B41FAB /* TChatTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				90A0C46F1D66B74500B41FAB /* TChatTextCell.swift */,
+				90C4D82A1D6AF682005CFE9B /* TChatTextCell_Left.xib */,
+				90A0C49D1D67136000B41FAB /* TChatTextCell_Right.xib */,
+			);
+			path = TChatTextCell;
+			sourceTree = "<group>";
+		};
+		90A0C4721D66B74500B41FAB /* TChatVideoCell */ = {
+			isa = PBXGroup;
+			children = (
+				90A0C4931D67120700B41FAB /* TChatVideoCell.swift */,
+				90A0C4951D67130500B41FAB /* TChatVideoCell_Left.xib */,
+			);
+			path = TChatVideoCell;
+			sourceTree = "<group>";
+		};
+		90A0C4731D66B74500B41FAB /* TChatVoiceCell */ = {
+			isa = PBXGroup;
+			children = (
+				90A0C4891D66B8F400B41FAB /* TChatVoiceCell.swift */,
+				90A0C48B1D66B90000B41FAB /* TChatVoiceCell_Left.swift */,
+				90A0C48D1D66B90700B41FAB /* TChatVoiceCell_Right.swift */,
+			);
+			path = TChatVoiceCell;
 			sourceTree = "<group>";
 		};
 		90B4C28C1D5D8D55004721B9 = {
@@ -351,10 +447,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				90B4C2A31D5D8D55004721B9 /* LaunchScreen.storyboard in Resources */,
+				90A0C4961D67130500B41FAB /* TChatVideoCell_Left.xib in Resources */,
 				90D1432A1D64155F006752B2 /* tabbar_me@3x.png in Resources */,
 				90D143281D64155F006752B2 /* tabbar_mainframeHL@3x.png in Resources */,
 				90D143271D64155F006752B2 /* tabbar_mainframeHL@2x.png in Resources */,
 				90D1431F1D64155F006752B2 /* tabbar_contactsHL@2x.png in Resources */,
+				90C4D82B1D6AF682005CFE9B /* TChatTextCell_Left.xib in Resources */,
 				90D1431D1D64155F006752B2 /* tabbar_contacts@2x.png in Resources */,
 				90D143261D64155F006752B2 /* tabbar_mainframe@3x.png in Resources */,
 				90D143251D64155F006752B2 /* tabbar_mainframe@2x.png in Resources */,
@@ -364,6 +462,7 @@
 				90D1432B1D64155F006752B2 /* tabbar_meHL@2x.png in Resources */,
 				90D143241D64155F006752B2 /* tabbar_discoverHL@3x.png in Resources */,
 				90D143291D64155F006752B2 /* tabbar_me@2x.png in Resources */,
+				90A0C49E1D67136000B41FAB /* TChatTextCell_Right.xib in Resources */,
 				90D143231D64155F006752B2 /* tabbar_discoverHL@2x.png in Resources */,
 				90D143221D64155F006752B2 /* tabbar_discover@3x.png in Resources */,
 				90D143211D64155F006752B2 /* tabbar_discover@2x.png in Resources */,
@@ -427,21 +526,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9004970B1D65D26D00FE57A2 /* TChatCell.swift in Sources */,
+				90A0C4681D66B6A900B41FAB /* TChatCell.swift in Sources */,
+				90A0C4861D66B8CA00B41FAB /* TChatImageCell_Left.swift in Sources */,
 				90B4C2EA1D5DCD9D004721B9 /* TLoginViewController.swift in Sources */,
 				90B4C2B81D5D9AD0004721B9 /* TConversationsViewController.swift in Sources */,
 				90B4C2991D5D8D55004721B9 /* AppDelegate.swift in Sources */,
 				900C39901D61BFC9007F3E9B /* TConversationModel.swift in Sources */,
 				90B4C2C21D5D9C06004721B9 /* TNavigationController.swift in Sources */,
 				900C39921D61E4A1007F3E9B /* TConversationCell.swift in Sources */,
+				90C4D8291D6AB076005CFE9B /* TChatCellManager.swift in Sources */,
+				90A0C4741D66B74500B41FAB /* TChatTextCell.swift in Sources */,
+				90A0C4801D66B89D00B41FAB /* TChatLocationCell_Left.swift in Sources */,
+				90A0C48C1D66B90000B41FAB /* TChatVoiceCell_Left.swift in Sources */,
+				90C4D8271D6AA26D005CFE9B /* TMessageCellModel.swift in Sources */,
+				90A0C4821D66B8A800B41FAB /* TChatLocationCell_Right.swift in Sources */,
 				90B4C2C51D5DAA94004721B9 /* TTableView.swift in Sources */,
+				90A0C4881D66B8D300B41FAB /* TChatImageCell_Right.swift in Sources */,
 				90B4C2EC1D5DD7C2004721B9 /* THeaders.swift in Sources */,
+				90A0C47E1D66B89100B41FAB /* TChatLocationCell.swift in Sources */,
+				90A0C48A1D66B8F400B41FAB /* TChatVoiceCell.swift in Sources */,
 				90A4B4961D6314F4007BBCEA /* EaseMobExtension.swift in Sources */,
 				900497091D65CF0E00FE57A2 /* TChatViewController.swift in Sources */,
+				90A0C48E1D66B90700B41FAB /* TChatVoiceCell_Right.swift in Sources */,
 				90B4C2C71D5DAC1C004721B9 /* TExtension.swift in Sources */,
+				90A0C4941D67120700B41FAB /* TChatVideoCell.swift in Sources */,
 				90B4C2B61D5D9A3D004721B9 /* TContactsViewController.swift in Sources */,
 				90B4C2BA1D5D9AE1004721B9 /* TSettingsViewController.swift in Sources */,
 				90B4C2BC1D5D9AF6004721B9 /* TMainViewController.swift in Sources */,
+				90A0C4841D66B8B900B41FAB /* TChatImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

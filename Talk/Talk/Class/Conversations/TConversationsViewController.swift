@@ -114,7 +114,7 @@ class TConversationsViewController: UITableViewController{
             && segue.destinationViewController.isKindOfClass(TChatViewController.classForCoder()){
             let cell = sender as! TConversationCell
             let vc = segue.destinationViewController as! TChatViewController
-            vc.chatter = cell.conversationModel.conversationChatter()
+            vc.conversationModel = cell.conversationModel
         }
      }
 }

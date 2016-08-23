@@ -10,11 +10,14 @@ import UIKit
 
 class TChatViewController: UITableViewController {
 
-    var chatter: String!
+    var conversationModel: TConversationModel!
+    var datasource: Array<TMessageCellModel>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(chatter)
+//        tableView.tableFooterView = UIView()
+        registerTableCell()
+        loadMessages(10)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +25,11 @@ class TChatViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func registerTableCell() {
+        tableView.registerClass(TChatTextCell.classForCoder(), forCellReuseIdentifier: "TChatTextCell_Right")
+        tableView.registerClass(TChatTextCell.classForCoder(), forCellReuseIdentifier: "TChatTextCell_Left")
+        tableView.registerClass(TChatImageCell.classForCoder(), forCellReuseIdentifier: "TChatImageCell_Right")
+    }
 
     /*
     // MARK: - Navigation
@@ -34,11 +42,32 @@ class TChatViewController: UITableViewController {
     */
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return datasource?.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TChatCell") as! TChatCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TChatTextCell_Left") as! TChatTextCell
+        cell.model = datasource![indexPath.row]
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return (datasource![indexPath.row] as TMessageCellModel).messageCellHeight()
+    }
+}
+
+extension TChatViewController {
+    func loadMessages(count: UInt) {
+        if datasource == nil {
+            datasource = Array()
+        }
+        let msgId = datasource!.last?.messageId()
+        let messages = conversationModel.conversation .loadNumbersOfMessages(count, withMessageId: msgId) as Array
+        for message in messages {
+            let msgModel = TMessageCellModel(message: message as! EMMessage)
+            datasource?.append(msgModel)
+        }
+        
+        tableView.reloadData()
     }
 }

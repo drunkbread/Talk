@@ -1,14 +1,14 @@
 //
-//  TChatCell.swift
+//  TChatImageCell_Left.swift
 //  Talk
 //
-//  Created by 杜洁鹏 on 16/8/18.
+//  Created by 杜洁鹏 on 16/8/19.
 //  Copyright © 2016年 DW. All rights reserved.
 //
 
 import UIKit
 
-class TChatCell: UITableViewCell {
+class TChatImageCell_Left: TChatImageCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

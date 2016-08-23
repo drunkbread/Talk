@@ -17,6 +17,9 @@ protocol TConversationModelDelegate {
     // 返回会话id
     func conversationChatter() -> String
     
+    // 返回会话类型
+    func conversationType() -> EMConversationType
+    
     // 会话显示的名称
     func conversationShowName() -> String
     
@@ -54,6 +57,10 @@ class TConversationModel: NSObject, TConversationModelDelegate{
     
     func conversationChatter() -> String{
         return conversation.chatter
+    }
+    
+    func conversationType() -> EMConversationType {
+        return conversation.conversationType
     }
     
     func conversationLastUpdateTime() -> String? {
