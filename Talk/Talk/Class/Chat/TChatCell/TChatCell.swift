@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TChatCell: UITableViewCell {
+class TChatCell: UITableViewCell{
 
     @IBOutlet weak var headImageView: UIImageView!
     @IBOutlet weak var bgImageView: UIImageView!

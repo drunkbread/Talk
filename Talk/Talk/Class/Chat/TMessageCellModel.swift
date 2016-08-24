@@ -58,7 +58,7 @@ extension TMessageCellModel: TMessageCellModelDelegate{
     }
     
     func messageTextContent() -> String {
-        return "aaaaaa"
+        return message.text()
     }
     
     func messageId() -> String {

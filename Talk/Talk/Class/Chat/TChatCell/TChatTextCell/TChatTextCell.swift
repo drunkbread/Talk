@@ -10,4 +10,10 @@ import UIKit
 
 class TChatTextCell: TChatCell {
     @IBOutlet weak var contentLabel: UILabel!
+    override var model: TMessageCellModel!{
+        didSet{
+            contentLabel.text = model.messageTextContent()
+        }
+    }
 }
+

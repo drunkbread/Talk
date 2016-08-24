@@ -19,23 +19,23 @@
                             <color key="backgroundColor" red="0.54454469680786133" green="0.90852272510528564" blue="0.36590501666069031" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUJ-H1-Cgc">
-                            <rect key="frame" x="6" y="0.0" width="6" height="114"/>
+                            <rect key="frame" x="6" y="1" width="6" height="112"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="mUJ-H1-Cgc" firstAttribute="bottom" secondItem="wc7-eU-z2m" secondAttribute="bottom" id="2l8-Vt-pzN"/>
+                        <constraint firstItem="mUJ-H1-Cgc" firstAttribute="bottom" secondItem="wc7-eU-z2m" secondAttribute="bottom" constant="-1" id="2l8-Vt-pzN"/>
                         <constraint firstAttribute="trailing" secondItem="wc7-eU-z2m" secondAttribute="trailing" id="8d2-Nv-RPK"/>
                         <constraint firstItem="mUJ-H1-Cgc" firstAttribute="trailing" secondItem="wc7-eU-z2m" secondAttribute="trailing" constant="-6" id="Kyo-3F-Bil"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="QBc-iT-vyc"/>
                         <constraint firstAttribute="bottom" secondItem="wc7-eU-z2m" secondAttribute="bottom" id="aYX-3v-iQ9"/>
                         <constraint firstItem="mUJ-H1-Cgc" firstAttribute="leading" secondItem="wc7-eU-z2m" secondAttribute="leading" constant="6" id="fXD-QQ-sxF"/>
                         <constraint firstItem="wc7-eU-z2m" firstAttribute="leading" secondItem="avg-Sx-Pz3" secondAttribute="leading" id="gKs-3h-hjO"/>
-                        <constraint firstItem="mUJ-H1-Cgc" firstAttribute="top" secondItem="wc7-eU-z2m" secondAttribute="top" id="j85-ks-hat"/>
+                        <constraint firstItem="mUJ-H1-Cgc" firstAttribute="top" secondItem="wc7-eU-z2m" secondAttribute="top" constant="1" id="j85-ks-hat"/>
                         <constraint firstItem="wc7-eU-z2m" firstAttribute="top" secondItem="avg-Sx-Pz3" secondAttribute="top" id="xsg-8v-H3s"/>
                     </constraints>
                 </view>

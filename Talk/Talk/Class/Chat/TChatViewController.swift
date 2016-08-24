@@ -15,7 +15,7 @@ class TChatViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.tableFooterView = UIView()
+        tableView.rowHeight = UITableViewAutomaticDimension;
         registerTableCell()
         loadMessages(10)
     }
@@ -46,13 +46,9 @@ class TChatViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TChatTextCell_Right") as! TChatTextCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TChatTextCell_Left") as! TChatTextCell
         cell.model = datasource![indexPath.row]
         return cell
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return (datasource![indexPath.row] as TMessageCellModel).messageCellHeight()
     }
 }
 
