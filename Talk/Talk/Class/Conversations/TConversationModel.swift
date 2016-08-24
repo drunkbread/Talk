@@ -34,6 +34,9 @@ protocol TConversationModelDelegate {
     
     // 最后一条消息的显示颜色 (如果是未读的音频，需要显示红色)
     func conversationMsgInfoColor() -> UIColor
+    
+    // load message
+    func conversationLoadMessage(count: UInt, msgId: String?) -> Array<AnyObject>
 }
 
 
@@ -109,6 +112,10 @@ class TConversationModel: NSObject, TConversationModelDelegate{
         return UIColor.lightGrayColor()
     }
     
+    func conversationLoadMessage(count: UInt, msgId: String?) -> Array<AnyObject> {
+        return conversation.loadNumbersOfMessages(count, withMessageId: msgId)
+    }
+    
     func makeConversationAsRead() {
         conversation.markAllMessagesAsRead(true)
     }
@@ -116,4 +123,6 @@ class TConversationModel: NSObject, TConversationModelDelegate{
     func makeConversationAsUnread() {
         conversation.markMessageWithId(conversation.latestMessage().messageId, asRead: false)
     }
+    
+    
 }

@@ -15,7 +15,9 @@ class TChatViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UITableViewAutomaticDimension;
+        addEaseMobDelegate()
+        tableView.rowHeight = UITableViewAutomaticDimension; 
+        tableView.estimatedRowHeight = 40
         registerTableCell()
         loadMessages(10)
     }
@@ -58,12 +60,40 @@ extension TChatViewController {
             datasource = Array()
         }
         let msgId = datasource!.last?.messageId()
-        let messages = conversationModel.conversation.loadNumbersOfMessages(count, withMessageId: msgId) as Array
+        let messages = conversationModel.conversationLoadMessage(count, msgId: msgId)
         for message in messages {
             let msgModel = TMessageCellModel(message: message as! EMMessage)
             datasource?.append(msgModel)
         }
         
         tableView.reloadData()
+    }
+    
+    func addMessageToDatasource(message: EMMessage) {
+        if datasource == nil {
+            datasource = Array()
+        }
+        datasource?.append(TMessageCellModel(message:message))
+        tableView.beginUpdates()
+        tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: datasource!.count - 1 , inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade)
+        tableView.endUpdates()
+        scrollsToBottomAnimated(true)
+    }
+    
+    func scrollsToBottomAnimated(animated: Bool) {
+        tableView.scrollToRowAtIndexPath(NSIndexPath(forItem: datasource!.count - 1, inSection: 0),
+                                         atScrollPosition: UITableViewScrollPosition.Bottom,
+                                         animated: animated)
+    }
+}
+
+extension TChatViewController: IChatManagerDelegate {
+    
+    func addEaseMobDelegate() {
+        chatManager.addDelegate(self, delegateQueue: nil)
+    }
+    
+    func didReceiveMessage(message: EMMessage!) {
+        addMessageToDatasource(message)
     }
 }

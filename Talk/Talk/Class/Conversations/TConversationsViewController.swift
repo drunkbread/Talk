@@ -41,16 +41,7 @@ class TConversationsViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        //        let conversationModel = datasource?[indexPath.row]
-        //        let str = conversationModel?.conversationUnreadCount() != nil ? "标为已读" : "标为未读"
-        //        let action1 = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: str, handler: { (action, index) in
-        //            if conversationModel?.conversationUnreadCount() != nil {
-        //                conversationModel!.makeConversationAsRead()
-        //            } else {
-        //                conversationModel!.makeConversationAsUnread()
-        //            }
-        //        })
-        
+
         let action2 = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "删除", handler: { (action, index) in
             Async.main
                 {

@@ -17,4 +17,12 @@ class TChatCell: UITableViewCell{
             headImageView.sd_setImageWithURL(model.messageAvatar(), placeholderImage: nil)
         }
     }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        
+    }
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        
+    }
 }
