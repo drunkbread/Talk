@@ -17,6 +17,7 @@ class TConversationsViewController: UITableViewController{
         super.viewDidLoad()
         addEaseMobDelegate()
         loadAllConversations()
+        addLogoutButton()
     }
     
     override func didReceiveMemoryWarning() {
@@ -169,6 +170,32 @@ extension TConversationsViewController: EMChatManagerDelegate{
     
     func didAutoLoginWithInfo(loginInfo: [NSObject : AnyObject]!, error: EMError!) {
         print("error  --- \(error)" )
+    }
+}
+
+extension TConversationsViewController {
+    
+    //MARK: - LF_Insert
+    //添加退出按钮 * 测试用
+    private func addLogoutButton() {
+        let button = UIButton.init(frame: CGRectMake(0, 0, 44, 44))
+        button.setTitle("退出", forState: UIControlState.Normal)
+        button.titleLabel?.font = UIFont.systemFontOfSize(15.0)
+        button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        button.addTarget(self, action: #selector(TConversationsViewController.logout), forControlEvents: UIControlEvents.TouchUpInside)
+        let rightItem = UIBarButtonItem.init(customView: button)
+        self.navigationItem.rightBarButtonItem = rightItem
+    }
+    
+    @objc private func logout() {
+        chatManager.asyncLogoffWithUnbindDeviceToken(true, completion: { (info, error) in
+            if error == nil {
+                NSNotificationCenter.defaultCenter().postNotificationName(ChangeMainViewController, object: nil)
+            } else {
+                self.showRemindAlert("退出登录", info: "退出登录：\(error.description)")
+            }
+            
+            }, onQueue: nil)
     }
 }
 

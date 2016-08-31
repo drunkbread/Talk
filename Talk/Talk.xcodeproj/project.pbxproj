@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84CC2CEE20E87D9AFB6035AE /* Pods_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B13BFDD3759A900ECA17E3F /* Pods_Talk.framework */; };
 		900497091D65CF0E00FE57A2 /* TChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900497081D65CF0E00FE57A2 /* TChatViewController.swift */; };
 		900C39901D61BFC9007F3E9B /* TConversationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C398F1D61BFC9007F3E9B /* TConversationModel.swift */; };
 		900C39921D61E4A1007F3E9B /* TConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C39911D61E4A1007F3E9B /* TConversationCell.swift */; };
@@ -57,10 +58,12 @@
 		90D1432A1D64155F006752B2 /* tabbar_me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431A1D64155F006752B2 /* tabbar_me@3x.png */; };
 		90D1432B1D64155F006752B2 /* tabbar_meHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431B1D64155F006752B2 /* tabbar_meHL@2x.png */; };
 		90D1432C1D64155F006752B2 /* tabbar_meHL@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431C1D64155F006752B2 /* tabbar_meHL@3x.png */; };
-		D77E8DAB6016636801CC4565 /* Pods_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C021AA66400DEBA9BBEE189A /* Pods_Talk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AE5840E425F128DEE6F049A /* Pods-Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Talk/Pods-Talk.release.xcconfig"; sourceTree = "<group>"; };
+		5918CC16965FD95E4D3A3881 /* Pods-Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Talk/Pods-Talk.debug.xcconfig"; sourceTree = "<group>"; };
+		5B13BFDD3759A900ECA17E3F /* Pods_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		900497081D65CF0E00FE57A2 /* TChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TChatViewController.swift; sourceTree = "<group>"; };
 		900C398F1D61BFC9007F3E9B /* TConversationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConversationModel.swift; sourceTree = "<group>"; };
 		900C39911D61E4A1007F3E9B /* TConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConversationCell.swift; sourceTree = "<group>"; };
@@ -114,9 +117,6 @@
 		90D1431A1D64155F006752B2 /* tabbar_me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@3x.png"; sourceTree = "<group>"; };
 		90D1431B1D64155F006752B2 /* tabbar_meHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_meHL@2x.png"; sourceTree = "<group>"; };
 		90D1431C1D64155F006752B2 /* tabbar_meHL@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_meHL@3x.png"; sourceTree = "<group>"; };
-		AA29734904EC80DA52E97E7A /* Pods-Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Talk/Pods-Talk.debug.xcconfig"; sourceTree = "<group>"; };
-		C021AA66400DEBA9BBEE189A /* Pods_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECAC71A94E8148D0F3DBBD59 /* Pods-Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Talk/Pods-Talk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,13 +124,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D77E8DAB6016636801CC4565 /* Pods_Talk.framework in Frameworks */,
+				84CC2CEE20E87D9AFB6035AE /* Pods_Talk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A08E985D2E89EAFBECA417C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5918CC16965FD95E4D3A3881 /* Pods-Talk.debug.xcconfig */,
+				0AE5840E425F128DEE6F049A /* Pods-Talk.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		900497071D65CEF800FE57A2 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,8 +218,8 @@
 			children = (
 				90B4C2971D5D8D55004721B9 /* Talk */,
 				90B4C2961D5D8D55004721B9 /* Products */,
-				B511892749F2B5C74855B4DB /* Pods */,
-				F333E188C80582491E7A2578 /* Frameworks */,
+				6A08E985D2E89EAFBECA417C /* Pods */,
+				BC862837F05A17EB1C89BA26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -368,19 +377,10 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		B511892749F2B5C74855B4DB /* Pods */ = {
+		BC862837F05A17EB1C89BA26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA29734904EC80DA52E97E7A /* Pods-Talk.debug.xcconfig */,
-				ECAC71A94E8148D0F3DBBD59 /* Pods-Talk.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F333E188C80582491E7A2578 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C021AA66400DEBA9BBEE189A /* Pods_Talk.framework */,
+				5B13BFDD3759A900ECA17E3F /* Pods_Talk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -392,12 +392,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90B4C2A71D5D8D55004721B9 /* Build configuration list for PBXNativeTarget "Talk" */;
 			buildPhases = (
-				61FF84FAE36A37849BD31619 /* Check Pods Manifest.lock */,
+				0A88C273F61AC164EFD300D9 /* 📦 Check Pods Manifest.lock */,
 				90B4C2911D5D8D55004721B9 /* Sources */,
 				90B4C2921D5D8D55004721B9 /* Frameworks */,
 				90B4C2931D5D8D55004721B9 /* Resources */,
-				A79E5506F3ADE378A8FA8045 /* Embed Pods Frameworks */,
-				E3A7B23111B980A0B378D487 /* Copy Pods Resources */,
+				98D43A39B111DBD7F0596955 /* 📦 Embed Pods Frameworks */,
+				333EE945A3F768CB4BDEA52E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -420,6 +420,7 @@
 				TargetAttributes = {
 					90B4C2941D5D8D55004721B9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = H2CBY8LCME;
 					};
 				};
 			};
@@ -474,14 +475,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		61FF84FAE36A37849BD31619 /* Check Pods Manifest.lock */ = {
+		0A88C273F61AC164EFD300D9 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,34 +490,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A79E5506F3ADE378A8FA8045 /* Embed Pods Frameworks */ = {
+		333EE945A3F768CB4BDEA52E /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Talk/Pods-Talk-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E3A7B23111B980A0B378D487 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Talk/Pods-Talk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98D43A39B111DBD7F0596955 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Talk/Pods-Talk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -664,10 +665,12 @@
 		};
 		90B4C2A81D5D8D55004721B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA29734904EC80DA52E97E7A /* Pods-Talk.debug.xcconfig */;
+			baseConfigurationReference = 5918CC16965FD95E4D3A3881 /* Pods-Talk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Talk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -709,8 +712,9 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djp.Talk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lf.talk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talk/Talk-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -718,10 +722,12 @@
 		};
 		90B4C2A91D5D8D55004721B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECAC71A94E8148D0F3DBBD59 /* Pods-Talk.release.xcconfig */;
+			baseConfigurationReference = 0AE5840E425F128DEE6F049A /* Pods-Talk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Talk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -763,8 +769,9 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djp.Talk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lf.talk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talk/Talk-Bridging-Header.h";
 			};
 			name = Release;

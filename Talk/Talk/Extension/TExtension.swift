@@ -139,3 +139,31 @@ extension NSDate{
         return dataFormatter.stringFromDate(time)
     }
 }
+
+//MARK: - LF_Insert
+extension UIViewController {
+    
+    func showRemindAlert(title: String, info: String) {
+        
+        let alert = UIAlertController.init(title: title, message: info, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Cancel) { (alert) in
+            
+        }
+        alert.addAction(action)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showChooseAlert(title: String, info: String, ifDone actions:()->()) {
+        let alert = UIAlertController.init(title: title, message: info, preferredStyle: UIAlertControllerStyle.Alert)
+        let action1 = UIAlertAction.init(title: "Yes", style: UIAlertActionStyle.Default) { (action) in
+            
+            actions()
+        }
+        let action2 = UIAlertAction.init(title: "No", style: UIAlertActionStyle.Cancel) { (action) in
+            
+        }
+        alert.addAction(action1)
+        alert.addAction(action2)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+}
