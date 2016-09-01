@@ -12,9 +12,17 @@ import Async
 class TConversationsViewController: UITableViewController{
     
     var datasource: Array<TConversationModel>?
-    
+    #if ShowSearch
+    var filterArray: Array<TConversationModel>?
+    var searchController: UISearchController!
+    var shouldShowSearchResults = false
+    #endif
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        #if ShowSearch
+        configSearchController()
+        #endif
         addEaseMobDelegate()
         loadAllConversations()
         addLogoutButton()
@@ -31,13 +39,29 @@ class TConversationsViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        #if ShowSearch
+        if shouldShowSearchResults {
+            return filterArray?.count ?? 0
+        } else {
+            return datasource?.count ?? 0
+        }
+        #else
         return datasource?.count ?? 0
+        #endif
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TConversationCell", forIndexPath: indexPath) as! TConversationCell
+        #if ShowSearch
+        if shouldShowSearchResults {
+            cell.conversationModel = filterArray?[indexPath.row]
+        } else {
+            cell.conversationModel = datasource![indexPath.row]
+        }
+        #else
         cell.conversationModel = datasource![indexPath.row]
+        #endif
         return cell
     }
     
@@ -199,3 +223,63 @@ extension TConversationsViewController {
     }
 }
 
+#if ShowSearch
+
+extension TConversationsViewController: UISearchBarDelegate,UISearchResultsUpdating
+{
+    //MARK: - 初始化SearchController
+    func configSearchController() {
+        searchController = UISearchController.init(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        //搜索的时候背景变暗
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search here.."
+        searchController.searchBar.delegate = self
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    //MARK: - UISearchBarDelegate
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        
+        shouldShowSearchResults = true
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        shouldShowSearchResults = false
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if !shouldShowSearchResults {
+            shouldShowSearchResults = true
+            tableView.reloadData()
+        }
+        searchController.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        shouldShowSearchResults = false
+        tableView.reloadData()
+    }
+    
+    //MARK: - UISearchResultsUpdating
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        let searchString = searchController.searchBar.text
+        
+        filterArray = datasource?.filter({ (country) -> Bool in
+            
+            let countryString: NSString = country.conversationChatter()
+            return (countryString.rangeOfString(searchString!, options: NSStringCompareOptions.CaseInsensitiveSearch)).location != NSNotFound
+            
+        })
+        tableView.reloadData()
+    }
+}
+
+#endif

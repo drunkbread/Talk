@@ -58,6 +58,7 @@
 		90D1432A1D64155F006752B2 /* tabbar_me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431A1D64155F006752B2 /* tabbar_me@3x.png */; };
 		90D1432B1D64155F006752B2 /* tabbar_meHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431B1D64155F006752B2 /* tabbar_meHL@2x.png */; };
 		90D1432C1D64155F006752B2 /* tabbar_meHL@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431C1D64155F006752B2 /* tabbar_meHL@3x.png */; };
+		D2C7ADCE1D77D6E3007A3B82 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C7ADCD1D77D6E3007A3B82 /* common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		90D1431A1D64155F006752B2 /* tabbar_me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@3x.png"; sourceTree = "<group>"; };
 		90D1431B1D64155F006752B2 /* tabbar_meHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_meHL@2x.png"; sourceTree = "<group>"; };
 		90D1431C1D64155F006752B2 /* tabbar_meHL@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_meHL@3x.png"; sourceTree = "<group>"; };
+		D2C7ADCD1D77D6E3007A3B82 /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				90B4C2BF1D5D9B3E004721B9 /* Extension */,
 				90B4C2AE1D5D9844004721B9 /* Class */,
 				90B4C2981D5D8D55004721B9 /* AppDelegate.swift */,
+				D2C7ADCD1D77D6E3007A3B82 /* common.swift */,
 				90B4C29C1D5D8D55004721B9 /* Main.storyboard */,
 				90B4C29F1D5D8D55004721B9 /* Assets.xcassets */,
 				90B4C2A11D5D8D55004721B9 /* LaunchScreen.storyboard */,
@@ -544,6 +547,7 @@
 				90B4C2C51D5DAA94004721B9 /* TTableView.swift in Sources */,
 				90A0C4881D66B8D300B41FAB /* TChatImageCell_Right.swift in Sources */,
 				90B4C2EC1D5DD7C2004721B9 /* THeaders.swift in Sources */,
+				D2C7ADCE1D77D6E3007A3B82 /* common.swift in Sources */,
 				90A0C47E1D66B89100B41FAB /* TChatLocationCell.swift in Sources */,
 				90A0C48A1D66B8F400B41FAB /* TChatVoiceCell.swift in Sources */,
 				90A4B4961D6314F4007BBCEA /* EaseMobExtension.swift in Sources */,
@@ -712,6 +716,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D ShowSearch";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lf.talk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -769,6 +774,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D ShowSearch";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lf.talk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
