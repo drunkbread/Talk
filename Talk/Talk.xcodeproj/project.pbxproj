@@ -58,7 +58,7 @@
 		90D1432A1D64155F006752B2 /* tabbar_me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431A1D64155F006752B2 /* tabbar_me@3x.png */; };
 		90D1432B1D64155F006752B2 /* tabbar_meHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431B1D64155F006752B2 /* tabbar_meHL@2x.png */; };
 		90D1432C1D64155F006752B2 /* tabbar_meHL@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1431C1D64155F006752B2 /* tabbar_meHL@3x.png */; };
-		D2C7ADCE1D77D6E3007A3B82 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C7ADCD1D77D6E3007A3B82 /* common.swift */; };
+		D2BFD2E31D79421600CEB20E /* TContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BFD2E21D79421600CEB20E /* TContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,7 +118,7 @@
 		90D1431A1D64155F006752B2 /* tabbar_me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@3x.png"; sourceTree = "<group>"; };
 		90D1431B1D64155F006752B2 /* tabbar_meHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_meHL@2x.png"; sourceTree = "<group>"; };
 		90D1431C1D64155F006752B2 /* tabbar_meHL@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_meHL@3x.png"; sourceTree = "<group>"; };
-		D2C7ADCD1D77D6E3007A3B82 /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		D2BFD2E21D79421600CEB20E /* TContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +242,6 @@
 				90B4C2BF1D5D9B3E004721B9 /* Extension */,
 				90B4C2AE1D5D9844004721B9 /* Class */,
 				90B4C2981D5D8D55004721B9 /* AppDelegate.swift */,
-				D2C7ADCD1D77D6E3007A3B82 /* common.swift */,
 				90B4C29C1D5D8D55004721B9 /* Main.storyboard */,
 				90B4C29F1D5D8D55004721B9 /* Assets.xcassets */,
 				90B4C2A11D5D8D55004721B9 /* LaunchScreen.storyboard */,
@@ -269,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				90B4C2B51D5D9A3D004721B9 /* TContactsViewController.swift */,
+				D2BFD2E21D79421600CEB20E /* TContactCell.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -537,6 +537,7 @@
 				90B4C2991D5D8D55004721B9 /* AppDelegate.swift in Sources */,
 				900C39901D61BFC9007F3E9B /* TConversationModel.swift in Sources */,
 				90B4C2C21D5D9C06004721B9 /* TNavigationController.swift in Sources */,
+				D2BFD2E31D79421600CEB20E /* TContactCell.swift in Sources */,
 				900C39921D61E4A1007F3E9B /* TConversationCell.swift in Sources */,
 				90C4D8291D6AB076005CFE9B /* TChatCellManager.swift in Sources */,
 				90A0C4741D66B74500B41FAB /* TChatTextCell.swift in Sources */,
@@ -547,7 +548,6 @@
 				90B4C2C51D5DAA94004721B9 /* TTableView.swift in Sources */,
 				90A0C4881D66B8D300B41FAB /* TChatImageCell_Right.swift in Sources */,
 				90B4C2EC1D5DD7C2004721B9 /* THeaders.swift in Sources */,
-				D2C7ADCE1D77D6E3007A3B82 /* common.swift in Sources */,
 				90A0C47E1D66B89100B41FAB /* TChatLocationCell.swift in Sources */,
 				90A0C48A1D66B8F400B41FAB /* TChatVoiceCell.swift in Sources */,
 				90A4B4961D6314F4007BBCEA /* EaseMobExtension.swift in Sources */,

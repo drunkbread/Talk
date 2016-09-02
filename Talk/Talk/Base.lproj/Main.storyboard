@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -196,22 +196,48 @@
             </objects>
             <point key="canvasLocation" x="2717" y="-242"/>
         </scene>
-        <!--Root View Controller-->
+        <!--通讯录-->
         <scene sceneID="wNR-cx-bFv">
             <objects>
                 <tableViewController id="zYP-J1-SVE" customClass="TContactsViewController" customModule="Talk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ujW-vr-RaU" customClass="TTableView" customModule="Talk" customModuleProvider="target">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" id="ujW-vr-RaU" customClass="TTableView" customModule="Talk" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7vh-v2-Nir">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TContactCell" rowHeight="94" id="7vh-v2-Nir" customClass="TContactCell" customModule="Talk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7vh-v2-Nir" id="0DG-kr-jkc">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="93"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ncg-kk-dH2">
+                                            <rect key="frame" x="5" y="5" width="83" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Ncg-kk-dH2" secondAttribute="height" multiplier="1:1" id="8DC-CT-2cD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yro-Kz-owY">
+                                            <rect key="frame" x="93" y="5" width="42" height="83"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Ncg-kk-dH2" secondAttribute="bottom" constant="5" id="16a-m9-8i4"/>
+                                        <constraint firstAttribute="bottom" secondItem="yro-Kz-owY" secondAttribute="bottom" constant="5" id="8R0-35-5zy"/>
+                                        <constraint firstItem="yro-Kz-owY" firstAttribute="top" secondItem="0DG-kr-jkc" secondAttribute="top" constant="5" id="OWT-f6-ftf"/>
+                                        <constraint firstItem="Ncg-kk-dH2" firstAttribute="leading" secondItem="0DG-kr-jkc" secondAttribute="leading" constant="5" id="o2g-PM-Bcq"/>
+                                        <constraint firstItem="yro-Kz-owY" firstAttribute="leading" secondItem="Ncg-kk-dH2" secondAttribute="trailing" constant="5" id="tJA-ch-r9Q"/>
+                                        <constraint firstItem="Ncg-kk-dH2" firstAttribute="top" secondItem="0DG-kr-jkc" secondAttribute="top" constant="5" id="wyY-ML-743"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="headImageView" destination="Ncg-kk-dH2" id="5IH-xE-Fc2"/>
+                                    <outlet property="nameLabel" destination="yro-Kz-owY" id="GqE-OU-nao"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -219,7 +245,7 @@
                             <outlet property="delegate" destination="zYP-J1-SVE" id="fvm-uC-4Jy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="G0S-Z5-FVG"/>
+                    <navigationItem key="navigationItem" title="通讯录" id="G0S-Z5-FVG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJ2-50-IX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -361,13 +387,16 @@
         <!--通讯录-->
         <scene sceneID="w6Q-xZ-mpe">
             <objects>
-                <navigationController id="cze-cK-8cp" sceneMemberID="viewController">
+                <navigationController id="cze-cK-8cp" customClass="TNavigationController" customModule="Talk" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_contacts" selectedImage="tabbar_contactsHL" id="feD-ve-2yX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uJV-cT-fkC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="uJV-cT-fkC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="0.034684354026845637" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.94917656699999997" green="1" blue="0.95530988719999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="zYP-J1-SVE" kind="relationship" relationship="rootViewController" id="rTm-VQ-YUl"/>

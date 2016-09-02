@@ -38,6 +38,7 @@ class TLoginViewController: UIViewController {
                     NSNotificationCenter.defaultCenter().postNotificationName(ChangeMainViewController, object: nil)
                     chatManager.loadDataFromDatabase()
                     chatManager.asyncFetchMyGroupsList()
+                    chatManager.asyncFetchBuddyList()
                 } else {
                     self.showRemindAlert("登录", info: "登录失败:\(error.description)")
                 }

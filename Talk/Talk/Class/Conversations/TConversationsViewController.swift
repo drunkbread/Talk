@@ -149,12 +149,12 @@ extension TConversationsViewController: EMChatManagerDelegate{
     
     // 会话列表数量变更回调
     func didUpdateConversationList(conversationList: [AnyObject]!) {
-        //        conversationsToModel(chatManager.conversations)
+                conversationsToModel(chatManager.conversations)
     }
     
     // 消息的未读数变化
     func didUnreadMessagesCountChanged() {
-        //        conversationsToModel(chatManager.conversations)
+                conversationsToModel(chatManager.conversations)
     }
     
     // 收消息回调
@@ -193,7 +193,13 @@ extension TConversationsViewController: EMChatManagerDelegate{
     }
     
     func didAutoLoginWithInfo(loginInfo: [NSObject : AnyObject]!, error: EMError!) {
-        print("error  --- \(error)" )
+        if error == nil {
+            chatManager.loadDataFromDatabase()
+            chatManager.asyncFetchMyGroupsList()
+            chatManager.asyncFetchBuddyList()
+        } else {
+            self.showRemindAlert("自动登录", info: "失败：\(error.description)")
+        }
     }
 }
 
