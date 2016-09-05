@@ -28,10 +28,6 @@ class TConversationsViewController: UITableViewController{
         addLogoutButton()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -57,7 +53,7 @@ class TConversationsViewController: UITableViewController{
         if shouldShowSearchResults {
             cell.conversationModel = filterArray?[indexPath.row]
         } else {
-            cell.conversationModel = datasource![indexPath.row]
+            cell.conversationModel = datasource?[indexPath.row]
         }
         #else
         cell.conversationModel = datasource![indexPath.row]
@@ -80,7 +76,18 @@ class TConversationsViewController: UITableViewController{
             }
         })
         
-        return [action2]
+        let action3 = UITableViewRowAction.init(style: UITableViewRowActionStyle.Default, title: "置顶") { (action, index) in
+            let conversationModel = self.datasource?.removeAtIndex(indexPath.row)
+            conversationModel?.conversation.ext  = ["top":true]
+            self.datasource?.insert(conversationModel!, atIndex: 0)
+            tableView.reloadData()
+        }
+        
+        let action4 = UITableViewRowAction.init(style: UITableViewRowActionStyle.Default, title: "取消置顶") { (action, index) in
+
+        }
+        
+        return [action2, action3, action4]
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -149,7 +156,7 @@ extension TConversationsViewController: EMChatManagerDelegate{
     
     // 会话列表数量变更回调
     func didUpdateConversationList(conversationList: [AnyObject]!) {
-                conversationsToModel(chatManager.conversations)
+//                conversationsToModel(chatManager.conversations)
     }
     
     // 消息的未读数变化
@@ -159,7 +166,7 @@ extension TConversationsViewController: EMChatManagerDelegate{
     
     // 收消息回调
     func didReceiveMessage(message: EMMessage!) {
-        conversationsToModel(chatManager.conversations)
+//        conversationsToModel(chatManager.conversations)
     }
     
     func conversationsToModel( ary: Array <AnyObject>?) {
@@ -173,17 +180,25 @@ extension TConversationsViewController: EMChatManagerDelegate{
         )
         
         var unreadCount: UInt = 0
-        
-        for conversation in conversations! {
+        if let cons = conversations {
+            
+        for conversation in cons {
             if datasource == nil {
                 datasource = Array()
             }
             let c = conversation as! EMConversation
-            datasource?.append(TConversationModel(conversation: c))
+            
+            let model = TConversationModel(conversation: c)
+            if model.isTopConversation(){
+                datasource?.insert(model, atIndex: 0)
+            } else {
+                datasource?.append(TConversationModel(conversation: c))
+            }
             unreadCount += c.unreadMessagesCount() ?? 0
         }
         
         tableView.reloadData()
+        }
         if unreadCount > 0 {
             navigationController?.tabBarItem.badgeValue = String(unreadCount)
         } else {
@@ -228,6 +243,8 @@ extension TConversationsViewController {
             }, onQueue: nil)
     }
 }
+
+//MARK: - Search Extension
 
 #if ShowSearch
 

@@ -37,6 +37,10 @@ protocol TConversationModelDelegate {
     
     // load message
     func conversationLoadMessage(count: UInt, msgId: String?) -> Array<AnyObject>
+    
+    //是否为置顶会话
+    func isTopConversation() -> Bool
+    
 }
 
 
@@ -53,6 +57,26 @@ class TConversationModel: NSObject, TConversationModelDelegate{
         return NSURL(string: "http://www.jf258.com/uploads/2013-07-07/070645591.jpg")
     }
     
+    func isTopConversation() -> Bool {
+//        if let ext = conversation.ext {
+//            if ext["top"] != nil {
+//                return true
+//            } else {
+//                return false
+//            }
+//        } else {
+//            return false
+//        }
+        guard let ext = conversation.ext else {
+            return false
+        }
+        if ext["top"] != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func conversationShowName() -> String {
         // 如果有名字，这里要加上名字的判断
         return conversation.chatter
@@ -67,13 +91,21 @@ class TConversationModel: NSObject, TConversationModelDelegate{
     }
     
     func conversationLastUpdateTime() -> String? {
-        let dTime = Double(conversation.latestMessage().timestamp)
+        var dTime = Double(0)
+        
+        if let latestMsg = conversation.latestMessage() {
+            dTime = Double(latestMsg.timestamp)
+        } else {
+            dTime = 0
+        }
+        
         return NSDate().UnixTimestampToString(dTime)
     }
     
     func conversationMsgInfo() -> String? {
         let ret: String!
-        let msg = conversation.latestMessage()
+        let msge = conversation.latestMessage()
+        if let msg = msge {
         if msg.msgBodyType() != nil {
             switch msg.msgBodyType()! {
             case MessageBodyType.eMessageBodyType_Text :
@@ -94,8 +126,10 @@ class TConversationModel: NSObject, TConversationModelDelegate{
         } else {
             ret = ""
         }
-        
-        return ret
+            return ret
+        } else {
+            return nil
+        }
     }
     
     func conversationUnreadCount() -> String? {
@@ -123,6 +157,8 @@ class TConversationModel: NSObject, TConversationModelDelegate{
     func makeConversationAsUnread() {
         conversation.markMessageWithId(conversation.latestMessage().messageId, asRead: false)
     }
+    
+
     
     
 }

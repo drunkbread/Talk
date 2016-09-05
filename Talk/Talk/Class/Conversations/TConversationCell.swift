@@ -17,6 +17,10 @@ class TConversationCell: UITableViewCell {
     var conversationModel: TConversationModel! {
         didSet {
             conversationAvatar.sd_setImageWithURL(conversationModel.conversationAvatar(), placeholderImage: nil)
+            if conversationModel.isTopConversation() {
+                conversationShowName.textColor = UIColor.cyanColor()
+
+            }
             conversationShowName.text = conversationModel.conversationShowName()
             conversationMsgInfo.text = conversationModel.conversationMsgInfo()
             conversationLastUpdateTime.text = conversationModel.conversationLastUpdateTime()
